@@ -6,7 +6,7 @@
   <link href="https://luoshenkui.com/atom.xml" rel="self"/>
   
   <link href="https://luoshenkui.com/"/>
-  <updated>2021-07-11T09:10:01.670Z</updated>
+  <updated>2021-07-14T14:07:08.648Z</updated>
   <id>https://luoshenkui.com/</id>
   
   <author>
@@ -15,6 +15,41 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mysql字符串拆分为列数据</title>
+    <link href="https://luoshenkui.com/archives/fc8e7585.html"/>
+    <id>https://luoshenkui.com/archives/fc8e7585.html</id>
+    <published>2021-07-14T13:55:52.000Z</published>
+    <updated>2021-07-14T14:07:08.648Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;mysql字符串拆分为列数据&quot;&gt;&lt;a href=&quot;#mysql字符串拆分为列数据&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="mysql" scheme="https://luoshenkui.com/categories/mysql/"/>
+    
+    
+    <category term="mysql" scheme="https://luoshenkui.com/tags/mysql/"/>
+    
+    <category term="help_topic" scheme="https://luoshenkui.com/tags/help-topic/"/>
+    
+    <category term="substring_index" scheme="https://luoshenkui.com/tags/substring-index/"/>
+    
+    <category term="date_sub" scheme="https://luoshenkui.com/tags/date-sub/"/>
+    
+    <category term="datediff" scheme="https://luoshenkui.com/tags/datediff/"/>
+    
+    <category term="行转列操作" scheme="https://luoshenkui.com/tags/%E8%A1%8C%E8%BD%AC%E5%88%97%E6%93%8D%E4%BD%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>博客版本更新日志</title>
