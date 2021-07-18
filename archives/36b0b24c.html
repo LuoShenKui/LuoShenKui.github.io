@@ -524,12 +524,12 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    3 分
                 </div>
                 
 
                 
-                    <span id="busuanzi_container_page_pv" style="display:none"></span>
+                    <span id="busuanzi_container_site_pv" style="display:none"></span>
                         <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
                         <span id="busuanzi_value_page_pv"></span>
 				
@@ -537,9 +537,6 @@
         </div>
         <hr class="clearfix">
 
-        
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
         
@@ -554,11 +551,11 @@
 <li>一个是仓库要写成SSH格式的，不要写成https 格式的，如果写成 <a target="_blank" rel="noopener" href="https://github.com/XXXX.git">https://github.com/XXXX.git</a> 这种格式的，则在你提交更新的时候，会让你输入登录密码（<del>十分痛苦！</del>）。</li>
 <li>分支要写成master或者是main,跟你的仓库保持一致，要么改配置这里，要么改github 仓库的分支；</li>
 </ul>
-<pre class="line-numbers language-Yml" data-language="Yml"><code class="language-Yml">deploy:
+<pre class="line-numbers language-Yml"><code class="language-Yml">deploy:
  type: git
  repository: git@github.com:LuoShenKui/LuoShenKui.github.io.git
- branch: master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
+ branch: master
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="3-配置修改注意事项"><a href="#3-配置修改注意事项" class="headerlink" title="3. 配置修改注意事项"></a>3. 配置修改注意事项</h3><p>​    注意修改配置时：</p>
 <ul>
 <li>冒号需要是英文的，不能是中文的。</li>
@@ -568,12 +565,12 @@
 </ul>
 <h3 id="4-LOGO设计"><a href="#4-LOGO设计" class="headerlink" title="4.LOGO设计"></a>4.LOGO设计</h3><p>​    我是拿画图工具直接画了一个，避免各种问题，后续再替换掉吧（笑）。注意logo文件不要太大。</p>
 <h3 id="5-设置B站链接"><a href="#5-设置B站链接" class="headerlink" title="5.设置B站链接"></a>5.设置B站链接</h3><p>​    我去 <a target="_blank" rel="noopener" href="https://fontawesome.com/icons">Font Awesome</a> 里没有找到B站的图标，就用了fa-bootstrap 的图标。</p>
-<pre class="line-numbers language-ejs" data-language="ejs"><code class="language-ejs">&lt;% if (theme.socialLink.bilibili) { %&gt;
-    &lt;a href="&lt;%= theme.socialLink.bilibili %&gt;" class="tooltipped" target="_blank" data-tooltip="关注我的B站: &lt;%= theme.socialLink.bilibili %&gt;" data-position="top" data-delay="50"&gt;
-        &lt;i class="fab fa-bootstrap"&gt;站&lt;/i&gt;
-    &lt;/a&gt;
-&lt;% } %&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<pre class="line-numbers language-ejs"><code class="language-ejs"><% if (theme.socialLink.bilibili) { %>
+    <a href="<%= theme.socialLink.bilibili %>" class="tooltipped" target="_blank" data-tooltip="关注我的B站: <%= theme.socialLink.bilibili %>" data-position="top" data-delay="50">
+        <i class="fab fa-bootstrap">站</i>
+    </a>
+<% } %>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="6-live2d问题"><a href="#6-live2d问题" class="headerlink" title="6.live2d问题"></a>6.live2d问题</h3><p>​    我设置了live2d,但是在右边的话会遮挡按钮，在配置里改到左边就可以了。</p>
 <h3 id="7-文章编写"><a href="#7-文章编写" class="headerlink" title="7.文章编写"></a>7.文章编写</h3><ul>
 <li>表头也要是冒号+空格的方式；</li>
@@ -1463,7 +1460,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">2.6k</span>&nbsp;字
+                class="white-color">1.7k</span>&nbsp;字
             
             
             
