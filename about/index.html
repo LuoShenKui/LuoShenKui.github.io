@@ -368,7 +368,7 @@
                         strings: ['',''],
                         startDelay: 300,
                         typeSpeed: 100,
-                        loop: true,
+                        loop: false,
                         backSpeed: 50,
                         showCursor: false
                     });
@@ -643,7 +643,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"mysql","value":1},{"name":"建站","value":1},{"name":"存储过程","value":1},{"name":"日志","value":1}],
+                data: [{"name":"mysql","value":1},{"name":"存储过程","value":1},{"name":"建站","value":1},{"name":"日志","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -667,7 +667,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["mysql","help_topic","substring_index","date_sub","datediff","字符串转列操作","博客","GitHub","hexo","建站"]
+                data: ["mysql","help_topic","substring_index","date_sub","datediff","字符串转列操作","水平分表","存储过程","博客","GitHub"]
             }
         ],
         yAxis: [
@@ -711,6 +711,144 @@
 
 
                 
+
+                
+                
+<div class="my-skills">
+    <div class="title center-align" data-aos="zoom-in-up">
+        <i class="fas fa-wrench"></i>&nbsp;&nbsp;我的技能
+    </div>
+    <div class="row">
+        
+        
+        
+        <div class="col s12 m6 l6" data-aos="fade-up">
+            <div class="skillbar">
+                <div class="skillbar-title"
+                     style="background: linear-gradient(to right, #FF0066 0%, #FF00CC 100%); width: 80%">
+                    <span>mysql</span>
+                </div>
+                <div class="skill-bar-percent">80%</div>
+            </div>
+        </div>
+        
+        
+        <div class="col s12 m6 l6" data-aos="fade-up">
+            <div class="skillbar">
+                <div class="skillbar-title"
+                     style="background: linear-gradient(to right, #9900FF 0%, #CC66FF 100%); width: 70%">
+                    <span>帆软</span>
+                </div>
+                <div class="skill-bar-percent">70%</div>
+            </div>
+        </div>
+        
+        
+        <div class="col s12 m6 l6" data-aos="fade-up">
+            <div class="skillbar">
+                <div class="skillbar-title"
+                     style="background: linear-gradient(to right, #2196F3 0%, #42A5F5 100%); width: 80%">
+                    <span>excel</span>
+                </div>
+                <div class="skill-bar-percent">80%</div>
+            </div>
+        </div>
+        
+        
+    </div>
+
+    
+
+    
+    <div class="other-skills chip-container" data-aos="zoom-in-up">
+        <div class="sub-title center-align"><i class="fa fa-book"></i>&nbsp;&nbsp;其他技能</div>
+        <div class="tag-chips center-align">
+            
+            
+            
+            
+            <a href="/tags/help-topic/">
+                <span class="chip center-align waves-effect waves-light chip-default">help_topic</span>
+            </a>
+            
+            
+            
+            <a href="/tags/substring-index/">
+                <span class="chip center-align waves-effect waves-light chip-default">substring_index</span>
+            </a>
+            
+            
+            
+            <a href="/tags/date-sub/">
+                <span class="chip center-align waves-effect waves-light chip-default">date_sub</span>
+            </a>
+            
+            
+            
+            <a href="/tags/datediff/">
+                <span class="chip center-align waves-effect waves-light chip-default">datediff</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E5%88%97%E6%93%8D%E4%BD%9C/">
+                <span class="chip center-align waves-effect waves-light chip-default">字符串转列操作</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E6%B0%B4%E5%B9%B3%E5%88%86%E8%A1%A8/">
+                <span class="chip center-align waves-effect waves-light chip-default">水平分表</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/">
+                <span class="chip center-align waves-effect waves-light chip-default">存储过程</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E5%8D%9A%E5%AE%A2/">
+                <span class="chip center-align waves-effect waves-light chip-default">博客</span>
+            </a>
+            
+            
+            
+            <a href="/tags/GitHub/">
+                <span class="chip center-align waves-effect waves-light chip-default">GitHub</span>
+            </a>
+            
+            
+            
+            <a href="/tags/hexo/">
+                <span class="chip center-align waves-effect waves-light chip-default">hexo</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E5%BB%BA%E7%AB%99/">
+                <span class="chip center-align waves-effect waves-light chip-default">建站</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E6%97%A5%E5%BF%97/">
+                <span class="chip center-align waves-effect waves-light chip-default">日志</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E6%9B%B4%E6%96%B0/">
+                <span class="chip center-align waves-effect waves-light chip-default">更新</span>
+            </a>
+            
+            
+        </div>
+    </div>
+    
+
+</div>
 
                 
 
@@ -1071,20 +1209,6 @@ $(function () {
 </script>
 
     <!-- Baidu Push -->
-
-<script>
-    (function () {
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        } else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-        }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
-</script>
 
     
     <script src="/libs/others/clicklove.js" async="async"></script>

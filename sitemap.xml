@@ -30,13 +30,6 @@
   </url>
   
   <url>
-    <loc>https://luoshenkui.com/404/index.html</loc>
-    
-    <lastmod>2021-07-11</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://luoshenkui.com/about/index.html</loc>
     
     <lastmod>2021-07-11</lastmod>
@@ -45,6 +38,13 @@
   
   <url>
     <loc>https://luoshenkui.com/categories/index.html</loc>
+    
+    <lastmod>2021-07-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://luoshenkui.com/404/index.html</loc>
     
     <lastmod>2021-07-11</lastmod>
     
@@ -123,6 +123,20 @@
   </url>
   
   <url>
+    <loc>https://luoshenkui.com/tags/%E6%B0%B4%E5%B9%B3%E5%88%86%E8%A1%A8/</loc>
+    <lastmod>2021-07-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://luoshenkui.com/tags/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/</loc>
+    <lastmod>2021-07-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://luoshenkui.com/tags/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2021-07-18</lastmod>
     <changefreq>daily</changefreq>
@@ -145,20 +159,6 @@
   
   <url>
     <loc>https://luoshenkui.com/tags/%E5%BB%BA%E7%AB%99/</loc>
-    <lastmod>2021-07-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://luoshenkui.com/tags/%E6%B0%B4%E5%B9%B3%E5%88%86%E8%A1%A8/</loc>
-    <lastmod>2021-07-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://luoshenkui.com/tags/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/</loc>
     <lastmod>2021-07-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -188,14 +188,14 @@
   </url>
   
   <url>
-    <loc>https://luoshenkui.com/categories/%E5%BB%BA%E7%AB%99/</loc>
+    <loc>https://luoshenkui.com/categories/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/</loc>
     <lastmod>2021-07-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://luoshenkui.com/categories/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/</loc>
+    <loc>https://luoshenkui.com/categories/%E5%BB%BA%E7%AB%99/</loc>
     <lastmod>2021-07-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
