@@ -30,13 +30,6 @@
   </url>
   
   <url>
-    <loc>https://luoshenkui.com/about/index.html</loc>
-    
-    <lastmod>2021-07-11</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://luoshenkui.com/404/index.html</loc>
     
     <lastmod>2021-07-11</lastmod>
@@ -44,7 +37,7 @@
   </url>
   
   <url>
-    <loc>https://luoshenkui.com/categories/index.html</loc>
+    <loc>https://luoshenkui.com/about/index.html</loc>
     
     <lastmod>2021-07-11</lastmod>
     
@@ -58,7 +51,7 @@
   </url>
   
   <url>
-    <loc>https://luoshenkui.com/tags/index.html</loc>
+    <loc>https://luoshenkui.com/categories/index.html</loc>
     
     <lastmod>2021-07-11</lastmod>
     
@@ -66,6 +59,13 @@
   
   <url>
     <loc>https://luoshenkui.com/friends/index.html</loc>
+    
+    <lastmod>2021-07-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://luoshenkui.com/tags/index.html</loc>
     
     <lastmod>2021-07-11</lastmod>
     
