@@ -6,7 +6,7 @@
   <link href="https://luoshenkui.com/atom.xml" rel="self"/>
   
   <link href="https://luoshenkui.com/"/>
-  <updated>2021-07-14T14:07:47.838Z</updated>
+  <updated>2021-07-18T10:49:07.372Z</updated>
   <id>https://luoshenkui.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用存储过程水平分表</title>
+    <link href="https://luoshenkui.com/archives/2e493eb7.html"/>
+    <id>https://luoshenkui.com/archives/2e493eb7.html</id>
+    <published>2021-07-18T10:14:38.000Z</published>
+    <updated>2021-07-18T10:49:07.372Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;​    我们经常会遇到一些数据表，数据量过大，比如日志表，每天产生几十万条数据，这样积累下来非常不利于数据库查询和维护，有时候甚至连&lt;code&gt;select count(*) from table a&lt;/code&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="存储过程" scheme="https://luoshenkui.com/categories/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/"/>
+    
+    
+    <category term="mysql" scheme="https://luoshenkui.com/tags/mysql/"/>
+    
+    <category term="水平分表" scheme="https://luoshenkui.com/tags/%E6%B0%B4%E5%B9%B3%E5%88%86%E8%A1%A8/"/>
+    
+    <category term="存储过程" scheme="https://luoshenkui.com/tags/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>mysql字符串拆分为列数据</title>

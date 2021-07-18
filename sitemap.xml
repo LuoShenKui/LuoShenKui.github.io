@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://luoshenkui.com/archives/2e493eb7.html</loc>
+    
+    <lastmod>2021-07-18</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://luoshenkui.com/archives/fc8e7585.html</loc>
     
     <lastmod>2021-07-14</lastmod>
@@ -37,14 +44,14 @@
   </url>
   
   <url>
-    <loc>https://luoshenkui.com/contact/index.html</loc>
+    <loc>https://luoshenkui.com/categories/index.html</loc>
     
     <lastmod>2021-07-11</lastmod>
     
   </url>
   
   <url>
-    <loc>https://luoshenkui.com/categories/index.html</loc>
+    <loc>https://luoshenkui.com/contact/index.html</loc>
     
     <lastmod>2021-07-11</lastmod>
     
@@ -116,6 +123,20 @@
   </url>
   
   <url>
+    <loc>https://luoshenkui.com/tags/%E6%B0%B4%E5%B9%B3%E5%88%86%E8%A1%A8/</loc>
+    <lastmod>2021-07-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://luoshenkui.com/tags/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/</loc>
+    <lastmod>2021-07-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://luoshenkui.com/tags/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2021-07-18</lastmod>
     <changefreq>daily</changefreq>
@@ -161,6 +182,13 @@
   
   <url>
     <loc>https://luoshenkui.com/categories/mysql/</loc>
+    <lastmod>2021-07-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://luoshenkui.com/categories/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/</loc>
     <lastmod>2021-07-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

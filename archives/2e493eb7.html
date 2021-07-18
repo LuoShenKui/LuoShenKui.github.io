@@ -22,7 +22,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="mysql字符串拆分为列数据, 洛神葵 博客 DBA mysql">
+    <meta name="keywords" content="使用存储过程水平分表, 洛神葵 博客 DBA mysql">
     <meta name="description" content="洛神葵|个人博客|DBA">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -45,7 +45,7 @@
 </script>
 
 
-    <title>mysql字符串拆分为列数据 | 洛神葵的博客</title>
+    <title>使用存储过程水平分表 | 洛神葵的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -345,12 +345,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">mysql字符串拆分为列数据</h1>
+                    <h1 class="description center-align post-title">使用存储过程水平分表</h1>
                 </div>
             </div>
         </div>
@@ -470,24 +470,12 @@
                                 <span class="chip bg-color">mysql</span>
                             </a>
                         
-                            <a href="/tags/help-topic/">
-                                <span class="chip bg-color">help_topic</span>
+                            <a href="/tags/%E6%B0%B4%E5%B9%B3%E5%88%86%E8%A1%A8/">
+                                <span class="chip bg-color">水平分表</span>
                             </a>
                         
-                            <a href="/tags/substring-index/">
-                                <span class="chip bg-color">substring_index</span>
-                            </a>
-                        
-                            <a href="/tags/date-sub/">
-                                <span class="chip bg-color">date_sub</span>
-                            </a>
-                        
-                            <a href="/tags/datediff/">
-                                <span class="chip bg-color">datediff</span>
-                            </a>
-                        
-                            <a href="/tags/%E8%A1%8C%E8%BD%AC%E5%88%97%E6%93%8D%E4%BD%9C/">
-                                <span class="chip bg-color">行转列操作</span>
+                            <a href="/tags/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/">
+                                <span class="chip bg-color">存储过程</span>
                             </a>
                         
                     </div>
@@ -498,8 +486,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/mysql/" class="post-category">
-                                mysql
+                            <a href="/categories/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/" class="post-category">
+                                存储过程
                             </a>
                         
                     </div>
@@ -511,28 +499,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-14
+                    2021-07-18
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-14
+                    2021-07-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    794
+                    507
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    2 分
                 </div>
                 
 
@@ -554,64 +542,55 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="mysql字符串拆分为列数据"><a href="#mysql字符串拆分为列数据" class="headerlink" title="mysql字符串拆分为列数据"></a>mysql字符串拆分为列数据</h1><p>有些时候，我们需要把字符串行转为列，这时候我们可以通过mysql.help_topic表来协助操作，help_topic_id 是从零开始的整数自增列。</p>
-<p>mysql.help_topic表是数据库mysql下的一个表，可以用 <code>desc help_topic</code>命令看到表的定义；</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://cdn.jsdelivr.net/gh/LuoShenKui/cdn/img/help_topic.png"></p>
-<p>需要注意的是，转为的列数据的行数不得超过mysql.help_topic.help_topic_id的最大值；也可用用其他从0开始的整数自增列（中间不能有跳跃）来代替此字段；</p>
-<h2 id="例：把“广东-江西-海南-湖南-安徽”-字符串拆分为列数据；"><a href="#例：把“广东-江西-海南-湖南-安徽”-字符串拆分为列数据；" class="headerlink" title="例：把“广东,江西,海南,湖南,安徽” 字符串拆分为列数据；"></a>例：把“广东,江西,海南,湖南,安徽” 字符串拆分为列数据；</h2><pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">SELECT SUBSTRING_INDEX(SUBSTRING_INDEX(a.addr,',',b.help_topic_id+1),',',-1) as addr
-FROM (SELECT '广东,江西,海南,湖南,安徽' as addr) a
-JOIN mysql.help_topic b on b.help_topic_id&lt;(LENGTH(a.addr)-LENGTH(REPLACE(a.addr,',',''))+1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+                <p>​    我们经常会遇到一些数据表，数据量过大，比如日志表，每天产生几十万条数据，这样积累下来非常不利于数据库查询和维护，有时候甚至连<code>select count(*) from table a</code> 都查不出来，为避免这种情况产生，通常会按照数据创建时间，来按年按月或者按季度进行分表，原表只保留几个月的数据。如下所示，用存储过程来进行处理。</p>
+<p>​    逻辑 就是 先创建分表，结构和原表相同，然后再插入数据，再删除原表插入历史表的数据。</p>
+<h2 id="分表存储过程"><a href="#分表存储过程" class="headerlink" title="分表存储过程"></a>分表存储过程</h2><pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">CREATE DEFINER=`XXX`@`%` PROCEDURE `up_clear_table_a`()
+BEGIN
+    -- 自动前30天前的数据到历史表中
+	DECLARE v_stat_date DATE;
+	DECLARE v_table_name VARCHAR(50);
+	DECLARE v_str VARCHAR(2000);
+	SET v_stat_date=DATE_SUB(CURRENT_DATE(),INTERVAL 30 DAY);
+	SET v_table_name=CONCAT('table_a_',DATE_FORMAT(v_stat_date,'%Y'));
+       
+	SET v_str=CONCAT('create table if not exists ',v_table_name,'(
+         id varchar(40) NOT NULL DEFAULT '''' COMMENT ''id'',
+         type tinyint(4) DEFAULT ''0'' COMMENT ''类型'',
+         remark varchar(255) DEFAULT '''',
+         state tinyint(4) DEFAULT ''0'' COMMENT ''状态'',
+         created_at datetime DEFAULT CURRENT_TIMESTAMP COMMENT ''创建时间'',
+         created_operator_id varchar(40) DEFAULT '''' COMMENT ''创建人'',
+         created_operator_name varchar(40) DEFAULT '''' COMMENT ''创建人名称'',
+         PRIMARY KEY (id),
+       ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT=''表''');       
+	SET @sql=v_str;
+	PREPARE stmt FROM @sql; 
+	EXECUTE stmt;  
+	DEALLOCATE PREPARE stmt;  
+      
+	SET v_str=CONCAT('insert into ',v_table_name,'
+          select * from table_a where created_at&gt;=''',v_stat_date,''' and created_at&lt;date_add(''',v_stat_date,''',interval 1 day)');
+	SET @sql=v_str;
+	PREPARE stmt FROM @sql; 
+	EXECUTE stmt;  
+	DEALLOCATE PREPARE stmt;  
+          
+	DELETE FROM table_a
+	WHERE created_at&gt;=v_stat_date AND created_at&lt;DATE_ADD(v_stat_date,INTERVAL 1 DAY);
+	
+END<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://cdn.jsdelivr.net/gh/LuoShenKui/cdn/img/provice.png"></p>
-<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><ul>
-<li>如果字符串最后也有一个逗号，则会额外多拆出来一个空字符串列，这时可以把on条件后面的+1给去掉；</li>
+<h2 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h2><h3 id="建表"><a href="#建表" class="headerlink" title="建表"></a>建表</h3><ul>
+<li>也可以使用 <code>create TABLE table_b like table_a;</code>来进行复制表，只复制表结构不复制数据；</li>
+<li><code>if not exists</code> 是必须要写的，不然报错的话就执行不下去了；</li>
+<li>单引号 两边都需要加个单引号</li>
 </ul>
-<h3 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h3><h4 id="SUBSTRING-INDEX（str-delim-count）"><a href="#SUBSTRING-INDEX（str-delim-count）" class="headerlink" title="SUBSTRING_INDEX（str,delim,count）"></a><strong>SUBSTRING_INDEX（str,delim,count）</strong></h4><ul>
-<li>str 是字符串，这里是 addr ； delim 是分隔符，这里是逗号；count是计数。</li>
-<li>返回 字符串str的第count 出现的分隔符的之前（后）的数据；</li>
-<li>如果count 是正数，则是返回第 count 个字符左边的字符串（从左往右）。</li>
-<li>如果count 是负数，则是返回第 （number 的绝对值）个字符右边的字符串（从右往左）。</li>
-</ul>
-<h5 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h5><p><code> SELECT SUBSTRING_INDEX("广东,江西,海南,湖南,安徽",',',2)</code> </p>
-<p>结果是 <code>广东,江西</code></p>
-<p> ``SELECT SUBSTRING_INDEX(“广东,江西,海南,湖南,安徽”,’,’,-2)`</p>
-<p>结果是 <code>湖南,安徽</code> </p>
-<p>这里是采用先取左列数据，再取右边第一个数据，就可以得到第N个数据；</p>
-<p> <code>SELECT SUBSTRING_INDEX(SUBSTRING_INDEX("广东,江西,海南,湖南,安徽",',',2),',',-1)</code> </p>
-<p>结果是 <code>江西</code></p>
-<h4 id="length-str-函数"><a href="#length-str-函数" class="headerlink" title="length(str)函数"></a>length(str)函数</h4><ul>
-<li>length()函数用于获取字符串的长度；</li>
-<li>一个汉字算3个字符，一个数字或字母算一个字符；</li>
-</ul>
-<h5 id="示例：-1"><a href="#示例：-1" class="headerlink" title="示例："></a>示例：</h5><p> <code>SELECT LENGTH("广东,江西")</code>结果是13。</p>
-<h4 id="replace-a-b-c"><a href="#replace-a-b-c" class="headerlink" title="replace(a,b,c)"></a>replace(a,b,c)</h4><ul>
-<li>将字符串a中的b 替换为c;</li>
-<li>a,b,c 均为字符串；</li>
-</ul>
-<h5 id="示例：-2"><a href="#示例：-2" class="headerlink" title="示例："></a>示例：</h5><p><code>SELECT replace("广东,江西,海南,湖南,安徽",",","、")</code> </p>
-<p>结果是 <code>广东、江西、海南、湖南、安徽</code></p>
-<h2 id="扩展应用：查询-某段日期-的列数据；"><a href="#扩展应用：查询-某段日期-的列数据；" class="headerlink" title="扩展应用：查询 某段日期 的列数据；"></a>扩展应用：查询 某段日期 的列数据；</h2><pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select date_format(date_sub('2021-07-12', interval help_topic_id day),'%Y-%m-%d') as dates 
-from  mysql.help_topic   
-where  help_topic_id&lt;=DATEDIFF('2021-07-12','2021-06-01') ;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="PREPARE-预处理语句"><a href="#PREPARE-预处理语句" class="headerlink" title="PREPARE 预处理语句"></a>PREPARE 预处理语句</h3><pre class="line-numbers language-msyql" data-language="msyql"><code class="language-msyql">PREPARE stmt FROM @sql; 
+EXECUTE stmt;  
+DEALLOCATE PREPARE stmt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="结果-1"><a href="#结果-1" class="headerlink" title="结果"></a>结果</h3><p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://cdn.jsdelivr.net/gh/LuoShenKui/cdn/img/date.png"></p>
-<h3 id="说明-1"><a href="#说明-1" class="headerlink" title="说明"></a>说明</h3><ul>
-<li>这条语句经常用于  查询很长一段日期的统计数据，如某段时间内每天的消费数据。由于存在意外情况，某天可能没数据，但是也是要展示，可以用这条语句查询 作为主表来left join;</li>
-</ul>
-<h3 id="解析-1"><a href="#解析-1" class="headerlink" title="解析"></a>解析</h3><h4 id="date-sub-date-INTERVAL-expr-type-函数"><a href="#date-sub-date-INTERVAL-expr-type-函数" class="headerlink" title="date_sub (date,INTERVAL expr type) 函数"></a>date_sub (date,INTERVAL expr type) 函数</h4><ul>
-<li>date是日期，expr是 时间间隔，type是时分秒日周月年等，详见<a target="_blank" rel="noopener" href="https://www.runoob.com/sql/func-date-sub.html">MySQL DATE_SUB()</a> 函数用法 ，这里不再解释了；</li>
-</ul>
-<h5 id="示例：-3"><a href="#示例：-3" class="headerlink" title="示例："></a>示例：</h5><p><code>SELECT date_sub('2021-07-12', interval 2 day);</code></p>
-<p>结果是 <code>2021-07-10</code></p>
-<h4 id="date-format-date-format"><a href="#date-format-date-format" class="headerlink" title="date_format(date,format)"></a>date_format(date,format)</h4><ul>
-<li>date 日期,format 是格式，年月日 是 ‘%Y-%m-%d’。其余字段详见 <a target="_blank" rel="noopener" href="https://www.runoob.com/sql/func-date-format.html">MySQL DATE_FORMAT() 函数</a></li>
-</ul>
-<h5 id="示例：-4"><a href="#示例：-4" class="headerlink" title="示例："></a>示例：</h5><p><code>SELECT DATE_FORMAT(CURRENT_DATE(),"%Y-%m-%d %H:%i:%s")</code></p>
-<h4 id="DATEDIFF-date1-date2"><a href="#DATEDIFF-date1-date2" class="headerlink" title="DATEDIFF(date1,date2)"></a>DATEDIFF(date1,date2)</h4><ul>
-<li>date1和date2 是日期，返回 date1 和date2 之间的天数,即  date1-date2 的天数;</li>
-</ul>
-<h5 id="示例：-5"><a href="#示例：-5" class="headerlink" title="示例："></a>示例：</h5><p><code>SELECT DATEDIFF('2021-07-12','2021-07-10')</code> </p>
-<p>结果是 <code>2</code> </p>
+<p>上面这三句是固定式语句，第一句式 预定义好动态sql语句 stmt，第二句毫无疑问式执行语句，第三局是删除预定义语句stmt。</p>
+<p>DEALLOCATE 英文翻译就是 <code>释放; 解除分配; 释放游标; 删除一个准备好的查询; 归还;</code></p>
 
                 
             </div>
@@ -638,7 +617,7 @@ where  help_topic_id&lt;=DATEDIFF('2021-07-12','2021-06-01') ;<span aria-hidden=
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://luoshenkui.com/archives/fc8e7585.html">https://luoshenkui.com/archives/fc8e7585.html</a>
+                    <a href="https://luoshenkui.com/archives/2e493eb7.html">https://luoshenkui.com/archives/2e493eb7.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -680,24 +659,12 @@ where  help_topic_id&lt;=DATEDIFF('2021-07-12','2021-06-01') ;<span aria-hidden=
                                     <span class="chip bg-color">mysql</span>
                                 </a>
                             
-                                <a href="/tags/help-topic/">
-                                    <span class="chip bg-color">help_topic</span>
+                                <a href="/tags/%E6%B0%B4%E5%B9%B3%E5%88%86%E8%A1%A8/">
+                                    <span class="chip bg-color">水平分表</span>
                                 </a>
                             
-                                <a href="/tags/substring-index/">
-                                    <span class="chip bg-color">substring_index</span>
-                                </a>
-                            
-                                <a href="/tags/date-sub/">
-                                    <span class="chip bg-color">date_sub</span>
-                                </a>
-                            
-                                <a href="/tags/datediff/">
-                                    <span class="chip bg-color">datediff</span>
-                                </a>
-                            
-                                <a href="/tags/%E8%A1%8C%E8%BD%AC%E5%88%97%E6%93%8D%E4%BD%9C/">
-                                    <span class="chip bg-color">行转列操作</span>
+                                <a href="/tags/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/">
+                                    <span class="chip bg-color">存储过程</span>
                                 </a>
                             
                         </div>
@@ -1127,9 +1094,10 @@ where  help_topic_id&lt;=DATEDIFF('2021-07-12','2021-06-01') ;<span aria-hidden=
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/archives/2e493eb7.html">
                     <div class="card-image">
@@ -1147,9 +1115,9 @@ where  help_topic_id&lt;=DATEDIFF('2021-07-12','2021-06-01') ;<span aria-hidden=
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1162,6 +1130,7 @@ where  help_topic_id&lt;=DATEDIFF('2021-07-12','2021-06-01') ;<span aria-hidden=
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1188,31 +1157,31 @@ where  help_topic_id&lt;=DATEDIFF('2021-07-12','2021-06-01') ;<span aria-hidden=
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/archives/5610cf1c.html">
+                <a href="/archives/fc8e7585.html">
                     <div class="card-image">
                         
                         
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/medias/featureimages/6.jpg" class="responsive-img" alt="博客版本更新日志">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/medias/featureimages/4.jpg" class="responsive-img" alt="mysql字符串拆分为列数据">
                         
-                        <span class="card-title">博客版本更新日志</span>
+                        <span class="card-title">mysql字符串拆分为列数据</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            记录下本博客一步一步成长的脚印！
+                            有些时候，我们需要把字符串行转为列，这时候我们可以通过mysql.help_topic表来协助操作
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-14
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%97%A5%E5%BF%97/" class="post-category">
-                                    日志
+                            <a href="/categories/mysql/" class="post-category">
+                                    mysql
                                 </a>
                             
                             
@@ -1222,12 +1191,28 @@ where  help_topic_id&lt;=DATEDIFF('2021-07-12','2021-06-01') ;<span aria-hidden=
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%97%A5%E5%BF%97/">
-                        <span class="chip bg-color">日志</span>
+                    <a href="/tags/mysql/">
+                        <span class="chip bg-color">mysql</span>
                     </a>
                     
-                    <a href="/tags/%E6%9B%B4%E6%96%B0/">
-                        <span class="chip bg-color">更新</span>
+                    <a href="/tags/help-topic/">
+                        <span class="chip bg-color">help_topic</span>
+                    </a>
+                    
+                    <a href="/tags/substring-index/">
+                        <span class="chip bg-color">substring_index</span>
+                    </a>
+                    
+                    <a href="/tags/date-sub/">
+                        <span class="chip bg-color">date_sub</span>
+                    </a>
+                    
+                    <a href="/tags/datediff/">
+                        <span class="chip bg-color">datediff</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%A1%8C%E8%BD%AC%E5%88%97%E6%93%8D%E4%BD%9C/">
+                        <span class="chip bg-color">行转列操作</span>
                     </a>
                     
                 </div>
