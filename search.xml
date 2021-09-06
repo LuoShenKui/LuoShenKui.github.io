@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>post</title>
+      <link href="/archives/5a8a6c8d.html"/>
+      <url>/archives/5a8a6c8d.html</url>
+      
+        <content type="html"><![CDATA[<p>​    最近在学习python，分享一些自己写的小功能</p><h2 id="1-遍历文件夹下文件"><a href="#1-遍历文件夹下文件" class="headerlink" title="1.遍历文件夹下文件"></a>1.遍历文件夹下文件</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> ospath <span class="token operator">=</span> r<span class="token string">'E:\files\files'</span><span class="token keyword">for</span> root<span class="token punctuation">,</span> dirs<span class="token punctuation">,</span> files <span class="token keyword">in</span> os<span class="token punctuation">.</span>walk<span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token comment" spellcheck="true"># root 表示当前正在访问的文件夹路径</span>    <span class="token comment" spellcheck="true"># dirs 表示该文件夹下的子目录名list</span>    <span class="token comment" spellcheck="true"># files 表示该文件夹下的文件list</span>    <span class="token comment" spellcheck="true"># 遍历文件</span>    <span class="token keyword">for</span> f <span class="token keyword">in</span> files<span class="token punctuation">:</span>        <span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>root<span class="token punctuation">,</span> f<span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span>path<span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># 遍历所有的文件夹</span>    <span class="token keyword">for</span> d <span class="token keyword">in</span> dirs<span class="token punctuation">:</span>        <span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>root<span class="token punctuation">,</span> d<span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span>path<span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>注：</p><ul><li>如果replace的old_string改为root,则不会出现父级路径；</li></ul><h2 id="2-查找文件夹下文件中的内容"><a href="#2-查找文件夹下文件中的内容" class="headerlink" title="2.查找文件夹下文件中的内容"></a>2.查找文件夹下文件中的内容</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> os<span class="token comment" spellcheck="true"># 遍历所有帆软报表，找出包含union的文件</span>path <span class="token operator">=</span> r<span class="token string">'D:\softwares\FineReport_10.0\webapps\webroot\WEB-INF\reportlets'</span>findstring <span class="token operator">=</span> <span class="token string">'union'</span><span class="token keyword">for</span> root<span class="token punctuation">,</span> dirs<span class="token punctuation">,</span> files <span class="token keyword">in</span> os<span class="token punctuation">.</span>walk<span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token keyword">for</span> name <span class="token keyword">in</span> files<span class="token punctuation">:</span>        <span class="token keyword">if</span> name<span class="token punctuation">.</span>endswith<span class="token punctuation">(</span><span class="token string">'.cpt'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>            filepath <span class="token operator">=</span> open<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>root<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">'r'</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>            <span class="token keyword">if</span> findstring  <span class="token keyword">in</span> filepath<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>                <span class="token keyword">print</span><span class="token punctuation">(</span>filepath<span class="token punctuation">.</span>name<span class="token punctuation">.</span>replace<span class="token punctuation">(</span>path<span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>注：</p><ul><li>文件最好打开的时候就指定格式</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> 遍历文件夹 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>使用存储过程水平分表</title>
       <link href="/archives/2e493eb7.html"/>
       <url>/archives/2e493eb7.html</url>

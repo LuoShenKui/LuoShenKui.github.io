@@ -6,7 +6,7 @@
   <link href="https://luoshenkui.com/atom.xml" rel="self"/>
   
   <link href="https://luoshenkui.com/"/>
-  <updated>2021-07-18T10:53:54.345Z</updated>
+  <updated>2021-09-06T14:55:14.912Z</updated>
   <id>https://luoshenkui.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>post</title>
+    <link href="https://luoshenkui.com/archives/5a8a6c8d.html"/>
+    <id>https://luoshenkui.com/archives/5a8a6c8d.html</id>
+    <published>2021-09-06T14:33:39.000Z</published>
+    <updated>2021-09-06T14:55:14.912Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;​    最近在学习python，分享一些自己写的小功能&lt;/p&gt;
+&lt;h2 id=&quot;1-遍历文件夹下文件&quot;&gt;&lt;a href=&quot;#1-遍历文件夹下文件&quot; class=&quot;headerlink&quot; title=&quot;1.遍历文件夹下文件&quot;&gt;&lt;/a&gt;1.遍历文件夹下文件&lt;/h2&gt;&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="https://luoshenkui.com/categories/python/"/>
+    
+    
+    <category term="python" scheme="https://luoshenkui.com/tags/python/"/>
+    
+    <category term="遍历文件夹" scheme="https://luoshenkui.com/tags/%E9%81%8D%E5%8E%86%E6%96%87%E4%BB%B6%E5%A4%B9/"/>
+    
+  </entry>
   
   <entry>
     <title>使用存储过程水平分表</title>
