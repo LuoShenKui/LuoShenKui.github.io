@@ -13,7 +13,7 @@
       
       <categories>
           
-          <category> msyql </category>
+          <category> mysql </category>
           
       </categories>
       
@@ -123,9 +123,7 @@
       
       <categories>
           
-          <category> 分组 </category>
-          
-          <category> 排序 </category>
+          <category> mysql </category>
           
       </categories>
       
@@ -170,6 +168,33 @@
     
     
     <entry>
+      <title>mysql几个特殊查询</title>
+      <link href="/archives/2e493eb7.html"/>
+      <url>/archives/2e493eb7.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="查询行数"><a href="#查询行数" class="headerlink" title="查询行数"></a>查询行数</h2><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">from</span> <span class="token number">a</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ul><li><p>直接count(*)就行，mysql对此有特殊优化。</p><h2 id="查询数据条数"><a href="#查询数据条数" class="headerlink" title="查询数据条数"></a>查询数据条数</h2><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token boolean">null</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p>上述查询值是0 ，通常与case when 结合使用，舍弃部分数据。</p><h2 id="求和"><a href="#求和" class="headerlink" title="求和"></a>求和</h2><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token boolean">null</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p>上述值为null,所以统计求和时，里面带除法的话，最好带个ifnull(a,0)。</p><h2 id="列转行"><a href="#列转行" class="headerlink" title="列转行"></a>列转行</h2><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> id<span class="token punctuation">,</span>GROUP_CONCAT<span class="token punctuation">(</span>score SEPARATOR <span class="token string">'、'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> new_socre<span class="token keyword">from</span> <span class="token punctuation">(</span><span class="token keyword">SELECT</span> <span class="token string">'a'</span> <span class="token keyword">as</span> id<span class="token punctuation">,</span> <span class="token number">80</span> <span class="token keyword">as</span> score<span class="token keyword">union</span> <span class="token keyword">all</span><span class="token keyword">SELECT</span> <span class="token string">'a'</span> <span class="token keyword">as</span> id<span class="token punctuation">,</span> <span class="token number">90</span> <span class="token keyword">as</span> score<span class="token keyword">union</span> <span class="token keyword">all</span><span class="token keyword">SELECT</span> <span class="token string">'b'</span> <span class="token keyword">as</span> id<span class="token punctuation">,</span> <span class="token number">80</span> <span class="token keyword">as</span> score<span class="token keyword">union</span> <span class="token keyword">all</span><span class="token keyword">SELECT</span> <span class="token string">'b'</span> <span class="token keyword">as</span> id<span class="token punctuation">,</span> <span class="token number">100</span> <span class="token keyword">as</span> score<span class="token punctuation">)</span><span class="token number">a</span> <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> id<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li><p>上述语句利用group_conat 把列数据转为相应的行数据，SEPARATOR 后面的分隔符可以自己修改。</p></li><li><p>注意 GROUP_CONCAT里面的值是有长度限制的，数据量过多的话会 截断或报错。</p></li></ul><h2 id="无限套娃机制"><a href="#无限套娃机制" class="headerlink" title="无限套娃机制"></a>无限套娃机制</h2><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span><span class="token keyword">FROM</span><span class="token punctuation">(</span>    <span class="token keyword">SELECT</span> <span class="token operator">*</span>     <span class="token keyword">FROM</span>    <span class="token punctuation">(</span>        <span class="token keyword">SELECT</span> <span class="token operator">*</span>         <span class="token keyword">FROM</span>        <span class="token punctuation">(</span>            <span class="token keyword">SELECT</span> <span class="token string">'a'</span> <span class="token keyword">as</span> id         <span class="token punctuation">)</span><span class="token number">a</span>     <span class="token punctuation">)</span><span class="token number">a</span><span class="token punctuation">)</span><span class="token number">a</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ul><li>mysql的表是可以无限制套娃的，复杂查询里经常套个好几层的，当然可读性就下降了，不如with语句。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> mysql </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> mysql </tag>
+            
+            <tag> 特殊查询 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>使用存储过程水平分表</title>
       <link href="/archives/2e493eb7.html"/>
       <url>/archives/2e493eb7.html</url>
@@ -179,7 +204,7 @@
       
       <categories>
           
-          <category> 存储过程 </category>
+          <category> mysql </category>
           
       </categories>
       
