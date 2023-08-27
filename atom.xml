@@ -6,7 +6,7 @@
   <link href="https://luoshenkui.com/atom.xml" rel="self"/>
   
   <link href="https://luoshenkui.com/"/>
-  <updated>2023-02-12T06:43:28.021Z</updated>
+  <updated>2023-08-27T13:44:05.362Z</updated>
   <id>https://luoshenkui.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mysql -虚拟列</title>
+    <link href="https://luoshenkui.com/archives/671c77b3.html"/>
+    <id>https://luoshenkui.com/archives/671c77b3.html</id>
+    <published>2023-08-27T12:59:51.000Z</published>
+    <updated>2023-08-27T13:44:05.362Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;mysql-虚拟列&quot;&gt;&lt;a href=&quot;#mysql-虚拟列&quot; class=&quot;headerlink&quot; title=&quot;mysql -虚拟列&quot;&gt;&lt;/a&gt;mysql -虚拟列&lt;/h1&gt;&lt;p&gt;● 5.7 版本以上；&lt;/p&gt;
+&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="mysql" scheme="https://luoshenkui.com/categories/mysql/"/>
+    
+    
+    <category term="mysql" scheme="https://luoshenkui.com/tags/mysql/"/>
+    
+    <category term="虚拟列" scheme="https://luoshenkui.com/tags/%E8%99%9A%E6%8B%9F%E5%88%97/"/>
+    
+  </entry>
   
   <entry>
     <title>帆软查询条件限制1个月！</title>
@@ -82,7 +110,7 @@
     <link href="https://luoshenkui.com/archives/b1b2a417.html"/>
     <id>https://luoshenkui.com/archives/b1b2a417.html</id>
     <published>2023-02-12T06:08:44.000Z</published>
-    <updated>2023-02-12T06:39:32.941Z</updated>
+    <updated>2023-08-27T13:37:51.708Z</updated>
     
     
       
@@ -111,7 +139,7 @@
     <link href="https://luoshenkui.com/archives/d782b799.html"/>
     <id>https://luoshenkui.com/archives/d782b799.html</id>
     <published>2023-02-12T06:08:36.000Z</published>
-    <updated>2023-02-12T06:39:32.939Z</updated>
+    <updated>2023-08-27T13:35:40.319Z</updated>
     
     
       
@@ -119,7 +147,7 @@
         
         
     <summary type="html">&lt;h2 id=&quot;任务栏对比：&quot;&gt;&lt;a href=&quot;#任务栏对比：&quot; class=&quot;headerlink&quot; title=&quot;任务栏对比：&quot;&gt;&lt;/a&gt;任务栏对比：&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;win11</summary>
+&lt;li&gt;&lt;p&gt;win11</summary>
         
       
     
@@ -362,7 +390,7 @@
     <link href="https://luoshenkui.com/archives/fc8e7585.html"/>
     <id>https://luoshenkui.com/archives/fc8e7585.html</id>
     <published>2021-07-14T13:55:52.000Z</published>
-    <updated>2022-07-18T13:13:49.129Z</updated>
+    <updated>2023-08-27T13:14:31.302Z</updated>
     
     
       
