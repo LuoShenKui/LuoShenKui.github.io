@@ -6,7 +6,7 @@
   <link href="https://luoshenkui.com/atom.xml" rel="self"/>
   
   <link href="https://luoshenkui.com/"/>
-  <updated>2023-08-27T13:46:44.035Z</updated>
+  <updated>2024-04-05T13:59:13.275Z</updated>
   <id>https://luoshenkui.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>阿里云polarDB MYSQL 8.0实例配置</title>
+    <link href="https://luoshenkui.com/archives/8a9028f6.html"/>
+    <id>https://luoshenkui.com/archives/8a9028f6.html</id>
+    <published>2024-04-05T13:57:24.000Z</published>
+    <updated>2024-04-05T13:59:13.275Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;检查 lower_case_table_names 是否是1；&lt;/li&gt;
+&lt;li&gt;设置：loose_polar_log_bin=ON,就是mysql的</summary>
+        
+      
+    
+    
+    
+    <category term="mysql" scheme="https://luoshenkui.com/categories/mysql/"/>
+    
+    
+    <category term="polarDB mysql" scheme="https://luoshenkui.com/tags/polarDB-mysql/"/>
+    
+  </entry>
   
   <entry>
     <title>mysql -虚拟列</title>

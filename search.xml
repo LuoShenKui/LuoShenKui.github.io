@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>阿里云polarDB MYSQL 8.0实例配置</title>
+      <link href="/archives/8a9028f6.html"/>
+      <url>/archives/8a9028f6.html</url>
+      
+        <content type="html"><![CDATA[<ul><li>检查 lower_case_table_names 是否是1；</li><li>设置：loose_polar_log_bin=ON,就是mysql的 log_bin参数，开启logbin，polar部分参数改名了</li><li>设置：character_set_server=utf8mb4</li><li>设置：collation_server=utf8mb4_general_ci</li><li>设置：loose_default_collation_for_utf8mb4=utf8mb4_general_ci</li><li>设置：sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,NO_ENGINE_SUBSTITUTION  可根据自己需求更改</li><li>检查： transaction_isolation是否是READ-COMMITTED</li><li>设置：wait_timeout=7200</li><li>设置 interactive_timeout=7200</li><li>设置 log_bin_trust_function_creators=ON</li></ul><h3 id="设置备份策略"><a href="#设置备份策略" class="headerlink" title="设置备份策略"></a>设置备份策略</h3><ul><li>默认是上午10点开始备份，可根据实际情况设置为低频访问时间段进行备份</li><li>注意不要与定时任务的执行时间冲突！最好定时执行事件完成后再同步备份！</li><li>一般备份保存3天即可；</li></ul><h2 id="设置账户"><a href="#设置账户" class="headerlink" title="设置账户"></a>设置账户</h2><ul><li>一个实例要有一个高权限账户，用以改存储过程或者事件用；</li><li>1个普通账户，仅DML(给开发用)；</li></ul><h2 id="数据库同步"><a href="#数据库同步" class="headerlink" title="数据库同步"></a>数据库同步</h2><ul><li>新建数据库；</li><li>数据量比较低的话可以用navicat备份后再移动文件，恢复；</li><li>数据量较大的话最好用迁移工具DTS同步；</li></ul><h2 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h2><ul><li>开启IP白名单，根据实际情况开启一些IP白名单网段</li><li>开启安全组，安全组策略跟 运维同事要一下；</li></ul><h2 id="公网"><a href="#公网" class="headerlink" title="公网"></a>公网</h2><ul><li>默认是没有公网地址的，可以申请自定义，用完之后也可以释放公网地址；</li><li>网络设置好之后最好让运维看下 ，最好用私网访问，不要用公网访问；</li><li>配置私网和公网地址，端口号3306也最好改下！</li></ul><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h4 id="binlog开启了，但是没有日志？"><a href="#binlog开启了，但是没有日志？" class="headerlink" title="binlog开启了，但是没有日志？"></a>binlog开启了，但是没有日志？</h4><ul><li>可能还没达到1G，所以没展示；</li></ul><h4 id="同步数据时，存储过程个别失败？"><a href="#同步数据时，存储过程个别失败？" class="headerlink" title="同步数据时，存储过程个别失败？"></a>同步数据时，存储过程个别失败？</h4><ul><li>原存储过程的用户名是root，不允许新增，手动改名后新增；</li></ul><h4 id="执行存储过程时报排序规则冲突？"><a href="#执行存储过程时报排序规则冲突？" class="headerlink" title="执行存储过程时报排序规则冲突？"></a>执行存储过程时报排序规则冲突？</h4><ul><li>检查数据库里表和字段 排序规则是否都保持一致；</li><li>检查参数collation_server是否与character_set_server 保持一致；</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> mysql </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> polarDB mysql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>mysql -虚拟列</title>
       <link href="/archives/671c77b3.html"/>
       <url>/archives/671c77b3.html</url>

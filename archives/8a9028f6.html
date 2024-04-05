@@ -22,7 +22,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="python 链接数据库, 洛神葵 博客 DBA mysql">
+    <meta name="keywords" content="阿里云polarDB MYSQL 8.0实例配置, 洛神葵 博客 DBA mysql">
     <meta name="description" content="洛神葵|个人博客|DBA">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -45,7 +45,7 @@
 </script>
 
 
-    <title>python 链接数据库 | 洛神葵的博客</title>
+    <title>阿里云polarDB MYSQL 8.0实例配置 | 洛神葵的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -345,12 +345,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">python 链接数据库</h1>
+                    <h1 class="description center-align post-title">阿里云polarDB MYSQL 8.0实例配置</h1>
                 </div>
             </div>
         </div>
@@ -466,16 +466,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/python/">
-                                <span class="chip bg-color">python</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                                <span class="chip bg-color">数据库</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/">
-                                <span class="chip bg-color">增删改查</span>
+                            <a href="/tags/polarDB-mysql/">
+                                <span class="chip bg-color">polarDB mysql</span>
                             </a>
                         
                     </div>
@@ -486,8 +478,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/python/" class="post-category">
-                                python
+                            <a href="/categories/mysql/" class="post-category">
+                                mysql
                             </a>
                         
                     </div>
@@ -499,28 +491,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-07-18
+                    2024-04-05
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-07-18
+                    2024-04-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    475
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    1 分
                 </div>
                 
 
@@ -539,175 +531,51 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="链接mysql"><a href="#链接mysql" class="headerlink" title="链接mysql"></a>链接mysql</h2><ul>
-<li>安装pymysql包；</li>
-<li>host不用写端口号；</li>
-<li>已脱敏；<br>```python<br>import pymysql</li>
+                <ul>
+<li>检查 lower_case_table_names 是否是1；</li>
+<li>设置：loose_polar_log_bin=ON,就是mysql的 log_bin参数，开启logbin，polar部分参数改名了</li>
+<li>设置：character_set_server=utf8mb4</li>
+<li>设置：collation_server=utf8mb4_general_ci</li>
+<li>设置：loose_default_collation_for_utf8mb4=utf8mb4_general_ci</li>
+<li>设置：sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,NO_ENGINE_SUBSTITUTION  可根据自己需求更改</li>
+<li>检查： transaction_isolation是否是READ-COMMITTED</li>
+<li>设置：wait_timeout=7200</li>
+<li>设置 interactive_timeout=7200</li>
+<li>设置 log_bin_trust_function_creators=ON</li>
 </ul>
-<p>connect = pymysql.connect(<br>    host=’aaaaaaa.mysql.rds.aliyuncs.com’,<br>    user=’AAAA’,<br>    password=’AAAAAA’,<br>    db=’test’,<br>    charset=’utf8mb4’<br>)</p>
-<p>cur = connect.cursor()<br>print(cur)</p>
-<pre><code>
-- 返回数据如下，是一个游标实例对象，表明连接成功。
-```python
-&lt;pymysql.cursors.Cursor object at 0x00000164DB2B86A0&gt;
-</code></pre>
-<h2 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h2><ul>
-<li>代码如下</li>
-<li>最好每次链接之后都关闭游标，关闭数据库链接<br>```python<br>import pymysql</li>
+<h3 id="设置备份策略"><a href="#设置备份策略" class="headerlink" title="设置备份策略"></a>设置备份策略</h3><ul>
+<li>默认是上午10点开始备份，可根据实际情况设置为低频访问时间段进行备份</li>
+<li>注意不要与定时任务的执行时间冲突！最好定时执行事件完成后再同步备份！</li>
+<li>一般备份保存3天即可；</li>
 </ul>
-<p>connect = pymysql.connect(<br>    host=’aaaaaaa.mysql.rds.aliyuncs.com’,<br>    user=’AAAA’,<br>    password=’AAAAAA’,<br>    db=’test’,<br>    charset=’utf8mb4’<br>)</p>
-<p>cur = connect.cursor()<br>print(cur)</p>
-<p>#创建表</p>
-<p>sql1 =”””<br>CREATE TABLE test01 (<br>    id int(11)  NOT NULL AUTO_INCREMENT COMMENT ‘ID’,<br>    key1 VARCHAR(40) DEFAULT ‘’ COMMENT ‘key1’,<br>    remark varchar(255) DEFAULT ‘’ COMMENT ‘备注’,<br>    state tinyint(4) DEFAULT ‘0’ COMMENT ‘状态 0-正常99-删除 ‘,<br>    version int(11) DEFAULT ‘0’ COMMENT ‘版本号’,<br>    created_at datetime DEFAULT CURRENT_TIMESTAMP COMMENT ‘创建时间’,<br>    created_operator_id varchar(40) DEFAULT ‘’ COMMENT ‘创建人’,<br>    created_operator_name varchar(40) DEFAULT ‘’ COMMENT ‘创建人名称’,<br>    updated_at datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT ‘修改日期’,<br>    updated_operator_id varchar(40) DEFAULT ‘’ COMMENT ‘修改人’,<br>    updated_operator_name varchar(40) DEFAULT ‘’ COMMENT ‘修改名称’,<br>    PRIMARY KEY (id),<br>    key ind_key1(key1)<br>)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT ‘测试1’;<br>“””<br>cur.execute(sql1)<br>cur.close<br>connect.close</p>
-<pre><code>
-- 结果如下，实际确实创建成功了
-
-
-- 但是由于程序是要可以重复执行的，所以要设置异常处理，也可以把sql1变量放到try里；
-```python
-try: 
-    cur.execute(sql1)
-except Exception as e:
-    print("创建数据表失败！",e)
-else:
-    print("创建数据表成功！")
-</code></pre>
-<ul>
-<li><p>报错如下：</p>
-<pre class="line-numbers language-python"><code class="language-python">创建数据表失败！ <span class="token punctuation">(</span><span class="token number">1050</span><span class="token punctuation">,</span> <span class="token string">"Table 'test01' already exists"</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="增加数据"><a href="#增加数据" class="headerlink" title="增加数据"></a>增加数据</h2></li>
-<li><p>注意一定要commit,否则实际是不会插入数据的，而且会占用一个自增ID，下一次再插入输入，ID会为3；</p>
-</li>
-<li><p>数据 增、删、改 都需要加commit语句；</p>
-</li>
-<li><p>表结构的增、删、改  都不需要加commit语句,这些是默认commit的；</p>
-<pre class="line-numbers language-python"><code class="language-python">sql2 <span class="token operator">=</span><span class="token triple-quoted-string string">"""
-INSERT INTO test01(key1)
-VALUES ("测试");
-"""</span>
-<span class="token keyword">try</span><span class="token punctuation">:</span> 
-  cur<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql2<span class="token punctuation">)</span>
-<span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
-  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"插入数据表失败！"</span><span class="token punctuation">,</span>e<span class="token punctuation">)</span>
-<span class="token keyword">else</span><span class="token punctuation">:</span>
-  connect<span class="token punctuation">.</span>commit<span class="token punctuation">(</span><span class="token punctuation">)</span>
-  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"插入数据表成功！"</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2></li>
-<li><p>查询有点特殊，需要用到游标来进行展示；</p>
-</li>
-<li><p>cur.execute(sql3) 返回是查询的多少条结果</p>
-</li>
-<li><p>fetchone()函数它的返回值是单个的元组，也就是一行记录,如果没有结果,那就会返回null</p>
-</li>
-<li><p>fetchall()函数,它的返回值是多个元组,即返回多个行记录,如果没有结果,返回的是()</p>
-</li>
-<li><p>注意：游标是会顺序访问的，是个迭代器。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 查询数据</span>
-sql3 <span class="token operator">=</span><span class="token triple-quoted-string string">"""
-  SELECT * from test01 WHERE id=1;
-"""</span>
-<span class="token keyword">try</span><span class="token punctuation">:</span> 
-  cur<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql3<span class="token punctuation">)</span>
-<span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
-  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"查询数据表失败！"</span><span class="token punctuation">,</span>e<span class="token punctuation">)</span>
-<span class="token keyword">else</span><span class="token punctuation">:</span>
-  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"查询数据表成功！"</span><span class="token punctuation">)</span>
-  one <span class="token operator">=</span> cur<span class="token punctuation">.</span>fetchone<span class="token punctuation">(</span><span class="token punctuation">)</span>
-  <span class="token keyword">print</span><span class="token punctuation">(</span>one<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>返回结果如下：</p>
-<pre class="line-numbers language-python"><code class="language-python">查询数据表成功！
-<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'测试'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">(</span><span class="token number">2022</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">29</span><span class="token punctuation">,</span> <span class="token number">48</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">(</span><span class="token number">2022</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">29</span><span class="token punctuation">,</span> <span class="token number">48</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-</li>
-<li><p>查询所有数据</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 查询数据</span>
-sql3 <span class="token operator">=</span><span class="token triple-quoted-string string">"""
-  SELECT * from test01 WHERE 1=1;
-"""</span>
-<span class="token keyword">try</span><span class="token punctuation">:</span> 
-  count<span class="token operator">=</span>cur<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql3<span class="token punctuation">)</span>
-<span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
-  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"查询数据表失败！"</span><span class="token punctuation">,</span>e<span class="token punctuation">)</span>
-<span class="token keyword">else</span><span class="token punctuation">:</span>
-  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"查询数据表成功！"</span><span class="token punctuation">)</span>
-  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"查询结果是几条数据："</span><span class="token punctuation">,</span>count<span class="token punctuation">)</span>
-  
-  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"其中一条结果是："</span><span class="token punctuation">)</span>
-  one <span class="token operator">=</span> cur<span class="token punctuation">.</span>fetchone<span class="token punctuation">(</span><span class="token punctuation">)</span>
-  <span class="token keyword">print</span><span class="token punctuation">(</span>one<span class="token punctuation">)</span>
-  
-  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"其中3条结果是："</span><span class="token punctuation">)</span>
-  many <span class="token operator">=</span> cur<span class="token punctuation">.</span>fetchmany<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
-  <span class="token keyword">print</span><span class="token punctuation">(</span>many<span class="token punctuation">)</span>
-
-  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"展示所有结果："</span><span class="token punctuation">)</span>
-  <span class="token keyword">for</span> each <span class="token keyword">in</span> range<span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">:</span>
-      <span class="token keyword">print</span><span class="token punctuation">(</span>cur<span class="token punctuation">.</span>fetchone<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>结果如下</p>
-<pre class="line-numbers language-python"><code class="language-python">查询数据表成功！
-查询结果是几条数据： <span class="token number">8</span>
-其中一条结果是：
-<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'测试'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">(</span><span class="token number">2022</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">29</span><span class="token punctuation">,</span> <span class="token number">48</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">(</span><span class="token number">2022</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">29</span><span class="token punctuation">,</span> <span class="token number">48</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
-其中<span class="token number">3</span>条结果是：
-<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'测试'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">(</span><span class="token number">2022</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">33</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">(</span><span class="token number">2022</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">33</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">'测试'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">(</span><span class="token number">2022</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">35</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">(</span><span class="token number">2022</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">35</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">'测试'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">(</span><span class="token number">2022</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">38</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">(</span><span class="token number">2022</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">38</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-展示所有结果：
-<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token string">'测试'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">(</span><span class="token number">2022</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">52</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">(</span><span class="token number">2022</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">52</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
-<span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token string">'测试'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">(</span><span class="token number">2022</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">56</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">(</span><span class="token number">2022</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">56</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
-<span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token string">'测试'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">(</span><span class="token number">2022</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">58</span><span class="token punctuation">,</span> <span class="token number">27</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">(</span><span class="token number">2022</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">58</span><span class="token punctuation">,</span> <span class="token number">27</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
-<span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token string">'测试'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">(</span><span class="token number">2022</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">59</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">(</span><span class="token number">2022</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">59</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
-None
-None
-None
-None
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>可以发现结果不对，这个是游标的顺序访问造成的，除非前面不查。<br>```python</p>
-</li>
+<h2 id="设置账户"><a href="#设置账户" class="headerlink" title="设置账户"></a>设置账户</h2><ul>
+<li>一个实例要有一个高权限账户，用以改存储过程或者事件用；</li>
+<li>1个普通账户，仅DML(给开发用)；</li>
 </ul>
-<h1 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h1><p>sql3 =”””<br>    SELECT * from test01 WHERE 1=1;<br>“””<br>try:<br>    count=cur.execute(sql3)<br>except Exception as e:<br>    print(“查询数据表失败！”,e)<br>else:<br>    print(“查询数据表成功！”)<br>    print(“查询结果是几条数据：”,count)</p>
-<pre><code>print("展示所有结果：")
-print(cur.fetchall())
-</code></pre>
-<pre><code>
-- 结果如下：
-```python
-查询数据表成功！
-查询结果是几条数据： 9
-展示所有结果：
-((1, '测试', '', 0, 0, datetime.datetime(2022, 7, 1, 10, 29, 48), '', '', datetime.datetime(2022, 7, 1, 10, 29, 48), '', ''), (3, '测试', '', 0, 0, datetime.datetime(2022, 7, 1, 10, 33, 13), '', '', datetime.datetime(2022, 7, 1, 10, 33, 13), '', ''), (4, '测试', '', 0, 0, datetime.datetime(2022, 7, 1, 10, 35, 32), '', '', datetime.datetime(2022, 7, 1, 10, 35, 32), '', ''), (5, '测试', '', 0, 0, datetime.datetime(2022, 7, 1, 10, 38, 22), '', '', datetime.datetime(2022, 7, 1, 10, 38, 22), '', ''), (6, '测试', '', 0, 0, datetime.datetime(2022, 7, 1, 10, 52, 26), '', '', datetime.datetime(2022, 7, 1, 10, 52, 26), '', ''), (7, '测试', '', 0, 0, datetime.datetime(2022, 7, 1, 10, 56, 9), '', '', datetime.datetime(2022, 7, 1, 10, 56, 9), '', ''), (8, '测试', '', 0, 0, datetime.datetime(2022, 7, 1, 10, 58, 27), '', '', datetime.datetime(2022, 7, 1, 10, 58, 27), '', ''), (9, '测试', '', 0, 0, datetime.datetime(2022, 7, 1, 10, 59, 4), '', '', datetime.datetime(2022, 7, 1, 10, 59, 4), '', ''), (10, '测试', '', 0, 0, datetime.datetime(2022, 7, 1, 11, 20, 31), '', '', datetime.datetime(2022, 7, 1, 11, 20, 31), '', ''))
-</code></pre>
-<h2 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h2><ul>
-<li>把sql1 改成drop语句就行<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 删除表</span>
-sql4 <span class="token operator">=</span><span class="token triple-quoted-string string">"""
-  drop table  if EXISTS test01 ;
-"""</span>
-<span class="token keyword">try</span><span class="token punctuation">:</span> 
-  count<span class="token operator">=</span>cur<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql4<span class="token punctuation">)</span>
-<span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
-  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"删除表失败！"</span><span class="token punctuation">,</span>e<span class="token punctuation">)</span>
-<span class="token keyword">else</span><span class="token punctuation">:</span>
-  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"删除表成功！"</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="完整语句"><a href="#完整语句" class="headerlink" title="完整语句"></a>完整语句</h2>```python<br>import pymysql</li>
+<h2 id="数据库同步"><a href="#数据库同步" class="headerlink" title="数据库同步"></a>数据库同步</h2><ul>
+<li>新建数据库；</li>
+<li>数据量比较低的话可以用navicat备份后再移动文件，恢复；</li>
+<li>数据量较大的话最好用迁移工具DTS同步；</li>
 </ul>
-<p>connect = pymysql.connect(<br>    host=’aaaaaaa.mysql.rds.aliyuncs.com’,<br>    user=’AAAA’,<br>    password=’AAAAAA’,<br>    db=’test’,<br>    charset=’utf8mb4’<br>)</p>
-<p>cur = connect.cursor()<br>print(cur)</p>
-<h1 id="创建表-1"><a href="#创建表-1" class="headerlink" title="创建表"></a>创建表</h1><p>sql1 =”””<br>CREATE TABLE test01 (<br>    id int(11)  NOT NULL AUTO_INCREMENT COMMENT ‘ID’,<br>    key1 VARCHAR(40) DEFAULT ‘’ COMMENT ‘key1’,<br>    remark varchar(255) DEFAULT ‘’ COMMENT ‘备注’,<br>    state tinyint(4) DEFAULT ‘0’ COMMENT ‘状态 0-正常99-删除 ‘,<br>    version int(11) DEFAULT ‘0’ COMMENT ‘版本号’,<br>    created_at datetime DEFAULT CURRENT_TIMESTAMP COMMENT ‘创建时间’,<br>    created_operator_id varchar(40) DEFAULT ‘’ COMMENT ‘创建人’,<br>    created_operator_name varchar(40) DEFAULT ‘’ COMMENT ‘创建人名称’,<br>    updated_at datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT ‘修改日期’,<br>    updated_operator_id varchar(40) DEFAULT ‘’ COMMENT ‘修改人’,<br>    updated_operator_name varchar(40) DEFAULT ‘’ COMMENT ‘修改名称’,<br>    PRIMARY KEY (id),<br>    key ind_key1(key1)<br>)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT ‘测试1’;<br>“””<br>try:<br>    cur.execute(sql1)<br>except Exception as e:<br>    print(“创建数据表失败！”,e)<br>else:<br>    print(“创建数据表成功！”)</p>
-<h1 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h1><p>sql2 =”””<br>INSERT INTO test01(key1)<br>VALUES (“测试”);<br>“””<br>try:<br>    cur.execute(sql2)<br>except Exception as e:<br>    print(“插入数据表失败！”,e)<br>else:<br>    connect.commit()<br>    print(“插入数据表成功！”)</p>
-<h1 id="查询数据-1"><a href="#查询数据-1" class="headerlink" title="查询数据"></a>查询数据</h1><p>sql3 =”””<br>    SELECT * from test01 WHERE 1=1;<br>“””<br>try:<br>    count=cur.execute(sql3)<br>except Exception as e:<br>    print(“查询数据表失败！”,e)<br>else:<br>    print(“查询数据表成功！”)<br>    print(“查询结果是几条数据：”,count)</p>
-<pre><code>print("展示所有结果：")
-print(cur.fetchall())
-</code></pre>
-<h1 id="删除表-1"><a href="#删除表-1" class="headerlink" title="删除表"></a>删除表</h1><p>sql4 =”””<br>    drop table  if EXISTS test01 ;<br>“””<br>try:<br>    count=cur.execute(sql4)<br>except Exception as e:<br>    print(“删除表失败！”,e)<br>else:<br>    print(“删除表成功！”)</p>
-<p>cur.close<br>connect.close</p>
-<pre><code>
-</code></pre>
+<h2 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h2><ul>
+<li>开启IP白名单，根据实际情况开启一些IP白名单网段</li>
+<li>开启安全组，安全组策略跟 运维同事要一下；</li>
+</ul>
+<h2 id="公网"><a href="#公网" class="headerlink" title="公网"></a>公网</h2><ul>
+<li>默认是没有公网地址的，可以申请自定义，用完之后也可以释放公网地址；</li>
+<li>网络设置好之后最好让运维看下 ，最好用私网访问，不要用公网访问；</li>
+<li>配置私网和公网地址，端口号3306也最好改下！</li>
+</ul>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h4 id="binlog开启了，但是没有日志？"><a href="#binlog开启了，但是没有日志？" class="headerlink" title="binlog开启了，但是没有日志？"></a>binlog开启了，但是没有日志？</h4><ul>
+<li>可能还没达到1G，所以没展示；</li>
+</ul>
+<h4 id="同步数据时，存储过程个别失败？"><a href="#同步数据时，存储过程个别失败？" class="headerlink" title="同步数据时，存储过程个别失败？"></a>同步数据时，存储过程个别失败？</h4><ul>
+<li>原存储过程的用户名是root，不允许新增，手动改名后新增；</li>
+</ul>
+<h4 id="执行存储过程时报排序规则冲突？"><a href="#执行存储过程时报排序规则冲突？" class="headerlink" title="执行存储过程时报排序规则冲突？"></a>执行存储过程时报排序规则冲突？</h4><ul>
+<li>检查数据库里表和字段 排序规则是否都保持一致；</li>
+<li>检查参数collation_server是否与character_set_server 保持一致；</li>
+</ul>
 
                 
             </div>
@@ -734,7 +602,7 @@ print(cur.fetchall())
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://luoshenkui.com/archives/8791a53a.html">https://luoshenkui.com/archives/8791a53a.html</a>
+                    <a href="https://luoshenkui.com/archives/8a9028f6.html">https://luoshenkui.com/archives/8a9028f6.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -772,16 +640,8 @@ print(cur.fetchall())
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/python/">
-                                    <span class="chip bg-color">python</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                                    <span class="chip bg-color">数据库</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/">
-                                    <span class="chip bg-color">增删改查</span>
+                                <a href="/tags/polarDB-mysql/">
+                                    <span class="chip bg-color">polarDB mysql</span>
                                 </a>
                             
                         </div>
@@ -1211,29 +1071,80 @@ print(cur.fetchall())
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/archives/184bfcc1.html">
+                <a href="/archives/8a9028f6.html">
                     <div class="card-image">
                         
                         
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/medias/featureimages/11.jpg" class="responsive-img" alt="将表定义转为markdown格式的语句">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/medias/featureimages/14.jpg" class="responsive-img" alt="阿里云polarDB MYSQL 8.0实例配置">
                         
-                        <span class="card-title">将表定义转为markdown格式的语句</span>
+                        <span class="card-title">阿里云polarDB MYSQL 8.0实例配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            将表定义转为markdown格式的语句
+                            摘要
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-18
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/mysql/" class="post-category">
+                                    mysql
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/polarDB-mysql/">
+                        <span class="chip bg-color">polarDB mysql</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/archives/671c77b3.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/medias/featureimages/13.jpg" class="responsive-img" alt="mysql -虚拟列">
+                        
+                        <span class="card-title">mysql -虚拟列</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            摘要
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1249,69 +1160,12 @@ print(cur.fetchall())
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%A1%A8%E5%AE%9A%E4%B9%89/">
-                        <span class="chip bg-color">表定义</span>
+                    <a href="/tags/mysql/">
+                        <span class="chip bg-color">mysql</span>
                     </a>
                     
-                    <a href="/tags/%E6%9F%A5%E8%AF%A2/">
-                        <span class="chip bg-color">查询</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/archives/48cc9777.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/medias/featureimages/4.jpg" class="responsive-img" alt="帆软报表查询某字段是否存在，并输出到excel">
-                        
-                        <span class="card-title">帆软报表查询某字段是否存在，并输出到excel</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            帆软报表查询某字段是否存在，并输出到excel
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-18
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/python/" class="post-category">
-                                    python
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%9F%A5%E8%AF%A2/">
-                        <span class="chip bg-color">查询</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%B8%86%E8%BD%AF/">
-                        <span class="chip bg-color">帆软</span>
-                    </a>
-                    
-                    <a href="/tags/excel/">
-                        <span class="chip bg-color">excel</span>
+                    <a href="/tags/%E8%99%9A%E6%8B%9F%E5%88%97/">
+                        <span class="chip bg-color">虚拟列</span>
                     </a>
                     
                 </div>
