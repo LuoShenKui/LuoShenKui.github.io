@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>商品明细提取HTML的img数据python</title>
+      <link href="/archives/97bf6272.html"/>
+      <url>/archives/97bf6272.html</url>
+      
+        <content type="html"><![CDATA[<ul><li>excel 两列数据：product_code,product_detail</li></ul><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd<span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup<span class="token comment" spellcheck="true"># 读取原始 Excel 文件</span>df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_excel<span class="token punctuation">(</span><span class="token string">'C:/Users/xxx/Desktop/product_detail0711.xlsx'</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 将 'product_detail' 列中的空值和浮点数值转换为字符串类型</span>df<span class="token punctuation">[</span><span class="token string">'product_detail'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">'product_detail'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span>astype<span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 新建存储结果的 DataFrame</span>result_df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'商品编码'</span><span class="token punctuation">,</span> <span class="token string">'图片序号'</span><span class="token punctuation">,</span> <span class="token string">'图片链接'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 创建空列表存储所有行的数据</span>data <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token comment" spellcheck="true"># 遍历每一行数据</span><span class="token keyword">for</span> index<span class="token punctuation">,</span> row <span class="token keyword">in</span> df<span class="token punctuation">.</span>iterrows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token comment" spellcheck="true"># 提取商品详情页 HTML 内容</span>    html_content <span class="token operator">=</span> row<span class="token punctuation">[</span><span class="token string">'product_detail'</span><span class="token punctuation">]</span>        <span class="token comment" spellcheck="true"># 使用 BeautifulSoup 解析 HTML</span>    soup <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>html_content<span class="token punctuation">,</span> <span class="token string">'html.parser'</span><span class="token punctuation">)</span>        <span class="token comment" spellcheck="true"># 提取 img 标签</span>    img_tags <span class="token operator">=</span> soup<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">'img'</span><span class="token punctuation">)</span>        <span class="token comment" spellcheck="true"># 遍历每个 img 标签</span>    <span class="token keyword">for</span> i<span class="token punctuation">,</span> img_tag <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span>img_tags<span class="token punctuation">)</span><span class="token punctuation">:</span>        <span class="token comment" spellcheck="true"># 提取图片链接</span>        img_url <span class="token operator">=</span> img_tag<span class="token punctuation">[</span><span class="token string">'src'</span><span class="token punctuation">]</span>                <span class="token comment" spellcheck="true"># 创建字典存储当前行的数据</span>        row_data <span class="token operator">=</span> <span class="token punctuation">{</span>            <span class="token string">'商品编码'</span><span class="token punctuation">:</span> row<span class="token punctuation">[</span><span class="token string">'product_code'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>            <span class="token string">'图片序号'</span><span class="token punctuation">:</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span>            <span class="token string">'图片链接'</span><span class="token punctuation">:</span> img_url        <span class="token punctuation">}</span>                <span class="token comment" spellcheck="true"># 将当前行的数据添加到列表中</span>        data<span class="token punctuation">.</span>append<span class="token punctuation">(</span>row_data<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 使用pd.DataFrame()创建DataFrame对象</span>result_df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 将结果保存到新的 Excel 文件</span>result_df<span class="token punctuation">.</span>to_excel<span class="token punctuation">(</span><span class="token string">'C:/Users/xxx/Desktop/product_detail_result0711-xqt.xlsx'</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> excel </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>2024年度总结</title>
       <link href="/archives/c2cf88b8.html"/>
       <url>/archives/c2cf88b8.html</url>
@@ -76,7 +103,9 @@
       
         <tags>
             
-            <tag> polarDB MySQL </tag>
+            <tag> MySQL </tag>
+            
+            <tag> polarDB </tag>
             
         </tags>
       
@@ -147,8 +176,6 @@
       
       
       <categories>
-          
-          <category> 帆软 </category>
           
           <category> MySQL </category>
           

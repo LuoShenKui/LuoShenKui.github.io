@@ -6,7 +6,7 @@
   <link href="https://luoshenkui.com/atom.xml" rel="self"/>
   
   <link href="https://luoshenkui.com/"/>
-  <updated>2025-03-03T08:15:04.054Z</updated>
+  <updated>2025-03-03T08:30:51.161Z</updated>
   <id>https://luoshenkui.com/</id>
   
   <author>
@@ -17,11 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>商品明细提取HTML的img数据python</title>
+    <link href="https://luoshenkui.com/archives/97bf6272.html"/>
+    <id>https://luoshenkui.com/archives/97bf6272.html</id>
+    <published>2025-03-03T08:26:10.000Z</published>
+    <updated>2025-03-03T08:30:51.161Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;excel 两列数据：product_code,product_detail&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&quot;line-numbers language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="python" scheme="https://luoshenkui.com/categories/python/"/>
+    
+    
+    <category term="python" scheme="https://luoshenkui.com/tags/python/"/>
+    
+    <category term="excel" scheme="https://luoshenkui.com/tags/excel/"/>
+    
+  </entry>
+  
+  <entry>
     <title>2024年度总结</title>
     <link href="https://luoshenkui.com/archives/c2cf88b8.html"/>
     <id>https://luoshenkui.com/archives/c2cf88b8.html</id>
     <published>2025-03-03T04:39:19.000Z</published>
-    <updated>2025-03-03T08:15:04.054Z</updated>
+    <updated>2025-03-03T08:30:58.709Z</updated>
     
     
       
@@ -48,7 +78,7 @@
     <link href="https://luoshenkui.com/archives/40d07ec0.html"/>
     <id>https://luoshenkui.com/archives/40d07ec0.html</id>
     <published>2025-03-02T10:19:22.000Z</published>
-    <updated>2025-03-03T07:48:43.667Z</updated>
+    <updated>2025-03-03T08:31:10.950Z</updated>
     
     
       
@@ -78,7 +108,7 @@
     <link href="https://luoshenkui.com/archives/8a9028f6.html"/>
     <id>https://luoshenkui.com/archives/8a9028f6.html</id>
     <published>2024-04-05T13:57:24.000Z</published>
-    <updated>2025-03-03T05:43:49.009Z</updated>
+    <updated>2025-03-03T08:24:10.071Z</updated>
     
     
       
@@ -96,7 +126,9 @@
     <category term="MySQL" scheme="https://luoshenkui.com/categories/MySQL/"/>
     
     
-    <category term="polarDB MySQL" scheme="https://luoshenkui.com/tags/polarDB-MySQL/"/>
+    <category term="MySQL" scheme="https://luoshenkui.com/tags/MySQL/"/>
+    
+    <category term="polarDB" scheme="https://luoshenkui.com/tags/polarDB/"/>
     
   </entry>
   
@@ -161,7 +193,7 @@
     <link href="https://luoshenkui.com/archives/5bf850a8.html"/>
     <id>https://luoshenkui.com/archives/5bf850a8.html</id>
     <published>2023-02-12T06:27:56.000Z</published>
-    <updated>2025-03-03T05:43:52.416Z</updated>
+    <updated>2025-03-03T08:24:49.831Z</updated>
     
     
       
@@ -174,9 +206,7 @@
     
     
     
-    <category term="帆软" scheme="https://luoshenkui.com/categories/%E5%B8%86%E8%BD%AF/"/>
-    
-    <category term="MySQL" scheme="https://luoshenkui.com/categories/%E5%B8%86%E8%BD%AF/MySQL/"/>
+    <category term="MySQL" scheme="https://luoshenkui.com/categories/MySQL/"/>
     
     
     <category term="MySQL" scheme="https://luoshenkui.com/tags/MySQL/"/>
