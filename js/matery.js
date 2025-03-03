@@ -176,15 +176,3 @@ $(function () {
     // 初始化加载 tooltipped.
     $('.tooltipped').tooltip();
 });
-
-
-// 添加不蒜子统计的容错处理
-document.addEventListener('DOMContentLoaded', function () {
-    // 设置超时，如果5秒后不蒜子还没有更新数据，就隐藏统计元素
-    setTimeout(function () {
-        var pvElement = document.getElementById('busuanzi_value_page_pv');
-        if (pvElement && pvElement.textContent === '0') {
-            pvElement.textContent = '--';
-        }
-    }, 5000);
-});
