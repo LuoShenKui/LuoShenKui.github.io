@@ -22,7 +22,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="mysql分组后排序, 洛神葵 博客 DBA mysql">
+    <meta name="keywords" content="MySQL分组后排序, 洛神葵 博客 DBA MySQL">
     <meta name="description" content="洛神葵|个人博客|DBA">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -45,7 +45,7 @@
 </script>
 
 
-    <title>mysql分组后排序 | 洛神葵的博客</title>
+    <title>MySQL分组后排序 | 洛神葵的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -345,12 +345,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">mysql分组后排序</h1>
+                    <h1 class="description center-align post-title">MySQL分组后排序</h1>
                 </div>
             </div>
         </div>
@@ -464,79 +464,87 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%88%86%E7%BB%84/">
+                                    <span class="chip bg-color">
+                                        分组
+                                    </span>
+                                </a>
+                                
+                                <a href="/tags/%E6%8E%92%E5%BA%8F/">
+                                    <span class="chip bg-color">
+                                        排序
+                                    </span>
+                                </a>
+                                
+                        </div>
                         
-                            <a href="/tags/%E5%88%86%E7%BB%84/">
-                                <span class="chip bg-color">分组</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%8E%92%E5%BA%8F/">
-                                <span class="chip bg-color">排序</span>
-                            </a>
-                        
-                    </div>
-                    
                 </div>
                 <div class="col s5 right-align">
                     
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        <div class="post-cate">
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                                <a href="/categories/MySQL/" class="post-category">
+                                    MySQL
+                                </a>
+                                
+                        </div>
                         
-                            <a href="/categories/mysql/" class="post-category">
-                                mysql
-                            </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
 
             <div class="post-info">
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-18
-                </div>
-                
+                    <div class="post-date info-break-policy">
+                        <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                            2022-01-18
+                    </div>
+                    
 
-                
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-07-18
-                </div>
-                
+                        
+                            <div class="post-date info-break-policy">
+                                <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                                    2025-03-03
+                            </div>
+                            
 
-                
-                <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    186
-                </div>
-                
+                                
+                                    <div class="info-break-policy">
+                                        <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                                            186
+                                    </div>
+                                    
 
-                
-                <div class="info-break-policy">
-                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
-                </div>
-                
+                                        
+                                            <div class="info-break-policy">
+                                                <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                                                    1
+                                                        分
+                                            </div>
+                                            
 
-                
-                    <span id="busuanzi_container_page_pv" style="display:none"></span>
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-				
+                                                
+                                                    <div class="info-break-policy">
+                                                        <span id="busuanzi_container_page_pv" style="display: none">
+                                                            <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                                                                <span id="busuanzi_value_page_pv"></span>
+                                                        </span>
+                                                    </div>
+                                                    
             </div>
         </div>
         <hr class="clearfix">
 
         
 
-        
+                
 
-        <div class="card-content article-card-content">
-            <div id="articleContent">
-                <p>创建表：</p>
-<pre class="line-numbers language-mysql"><code class="language-mysql">CREATE TABLE `test_user_scores` (
+                        <div class="card-content article-card-content">
+                            <div id="articleContent">
+                                <p>创建表：</p>
+<pre class="line-numbers language-MySQL"><code class="language-MySQL">CREATE TABLE `test_user_scores` (
   `id` int NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `user_id` int NOT NULL DEFAULT '0' COMMENT '用户ID',
   `group_id` int NOT NULL DEFAULT '0' COMMENT '分组ID',
@@ -547,7 +555,7 @@
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='分组分数表';
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>插入数据</p>
-<pre class="line-numbers language-mysql"><code class="language-mysql">INSERT INTO `test`.`test_user_scores` (`id`, `user_id`, `group_id`, `scores`) 
+<pre class="line-numbers language-MySQL"><code class="language-MySQL">INSERT INTO `test`.`test_user_scores` (`id`, `user_id`, `group_id`, `scores`) 
 VALUES (1, 1, 1, 80),
 (2, 1, 2, 78),
 (3, 1, 1, 99),
@@ -557,13 +565,13 @@ VALUES (1, 1, 1, 80),
 (7, 1, 1, 18),
 (8, 1, 1, 78),
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>mysql 版本：</p>
-<pre class="line-numbers language-mysql"><code class="language-mysql">SELECT version();  -- 8.0.25
+<p>MySQL 版本：</p>
+<pre class="line-numbers language-MySQL"><code class="language-MySQL">SELECT version();  -- 8.0.25
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ol>
 <li>取每人每组最高分</li>
 </ol>
-<pre class="line-numbers language-mysql"><code class="language-mysql">SELECT user_id,group_id, max(scores) as max_scores
+<pre class="line-numbers language-MySQL"><code class="language-MySQL">SELECT user_id,group_id, max(scores) as max_scores
 from test_user_scores
 GROUP BY user_id,group_id
 ;
@@ -571,7 +579,7 @@ GROUP BY user_id,group_id
 <ol start="2">
 <li>取每人top3分数</li>
 </ol>
-<pre class="line-numbers language-mysql"><code class="language-mysql">SELECT user_id,scores,row_num 
+<pre class="line-numbers language-MySQL"><code class="language-MySQL">SELECT user_id,scores,row_num 
 from (
 SELECT user_id,scores,IF(@field=user_id,@rownum:=@rownum+1,@rownum:=1) as row_num, @field:=user_id
 FROM
@@ -585,7 +593,7 @@ FROM
 <ol start="3">
 <li>取每人每组top3分数 </li>
 </ol>
-<pre class="line-numbers language-mysql"><code class="language-mysql">SELECT user_id,group_id,scores,row_num1,row_num2 
+<pre class="line-numbers language-MySQL"><code class="language-MySQL">SELECT user_id,group_id,scores,row_num1,row_num2 
 from (
     SELECT user_id,group_id,scores,IF(@field=user_id,@rownum1:=@rownum1+1,@rownum1:=1) as row_num1,
     IF(@field=user_id && @field2=group_id,@rownum2:=@rownum2+1,@rownum2:=1) as row_num2,    @field:=user_id,@field2:=group_id 
@@ -601,16 +609,16 @@ from (
 <ol start="4">
 <li>使用窗口函数实现</li>
 </ol>
-<pre class="line-numbers language-mysql"><code class="language-mysql">SELECT row_number()over(partition by group_id,user_id order by scores desc) as rn,user_Id,group_id,scores 
+<pre class="line-numbers language-MySQL"><code class="language-MySQL">SELECT row_number()over(partition by group_id,user_id order by scores desc) as rn,user_Id,group_id,scores 
 FROM test_user_scores
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>参考资料：</p>
 
-                
-            </div>
-            <hr/>
+                                    
+                            </div>
+                            <hr />
 
-            
+                            
 
     <div class="reprint" id="reprint-statement">
         
@@ -664,24 +672,29 @@ FROM test_user_scores
 
 
 
-            <div class="tag_share" style="display: block;">
-                <div class="post-meta__tag-list" style="display: inline-block;">
-                    
-                        <div class="article-tag">
-                            
-                                <a href="/tags/%E5%88%86%E7%BB%84/">
-                                    <span class="chip bg-color">分组</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%8E%92%E5%BA%8F/">
-                                    <span class="chip bg-color">排序</span>
-                                </a>
-                            
-                        </div>
-                    
-                </div>
-                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+                                <div class="tag_share" style="display: block;">
+                                    <div class="post-meta__tag-list" style="display: inline-block;">
+                                        
+                                            <div class="article-tag">
+                                                
+                                                    <a href="/tags/%E5%88%86%E7%BB%84/">
+                                                        <span class="chip bg-color">
+                                                            分组
+                                                        </span>
+                                                    </a>
+                                                    
+                                                    <a href="/tags/%E6%8E%92%E5%BA%8F/">
+                                                        <span class="chip bg-color">
+                                                            排序
+                                                        </span>
+                                                    </a>
+                                                    
+                                            </div>
+                                            
+                                    </div>
+                                    <div class="post_share"
+                                        style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                                        <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
 <div id="article-share">
 
     
@@ -690,10 +703,10 @@ FROM test_user_scores
 
 </div>
 
-                </div>
-            </div>
-            
-                <style>
+                                    </div>
+                                </div>
+                                
+                                    <style>
     #reward {
         margin: 40px 0;
         text-align: center;
@@ -818,20 +831,20 @@ FROM test_user_scores
     });
 </script>
 
-            
-        </div>
+                                        
+                        </div>
     </div>
 
     
 
-    
+                
 
-    
+                            
 
-    
+                                        
 
-    
-        <style>
+                                                    
+                                                        <style>
     .valine-card {
         margin: 1.5rem auto;
     }
@@ -1093,13 +1106,13 @@ FROM test_user_scores
     });
 </script>
 
-    
+                                                            
 
-    
+                                                                
 
-    
+                                                                            
 
-    
+                                                                                        
 
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
@@ -1210,62 +1223,65 @@ FROM test_user_scores
 </div>
 
 
-<script>
-    $('#articleContent').on('copy', function (e) {
-        // IE8 or earlier browser is 'undefined'
-        if (typeof window.getSelection === 'undefined') return;
+    <script>
+        $('#articleContent').on('copy', function (e) {
+            // IE8 or earlier browser is 'undefined'
+            if (typeof window.getSelection === 'undefined') return;
 
-        var selection = window.getSelection();
-        // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('120')) {
-            return;
-        }
+            var selection = window.getSelection();
+            // if the selection is short let's not annoy our users.
+            if (('' + selection).length < Number.parseInt('120')) {
+                return;
+            }
 
-        // create a div outside of the visible area and fill it with the selected text.
-        var bodyElement = document.getElementsByTagName('body')[0];
-        var newdiv = document.createElement('div');
-        newdiv.style.position = 'absolute';
-        newdiv.style.left = '-99999px';
-        bodyElement.appendChild(newdiv);
-        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+            // create a div outside of the visible area and fill it with the selected text.
+            var bodyElement = document.getElementsByTagName('body')[0];
+            var newdiv = document.createElement('div');
+            newdiv.style.position = 'absolute';
+            newdiv.style.left = '-99999px';
+            bodyElement.appendChild(newdiv);
+            newdiv.appendChild(selection.getRangeAt(0).cloneContents());
 
-        // we need a <pre> tag workaround.
-        // otherwise the text inside "pre" loses all the line breaks!
-        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
-            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
-        }
+            // we need a <pre> tag workaround.
+            // otherwise the text inside "pre" loses all the line breaks!
+            if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+                newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+            }
 
-        var url = document.location.href;
-        newdiv.innerHTML += '<br />'
-            + '来源: 洛神葵的博客<br />'
-            + '文章作者: 洛神葵<br />'
-            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
-            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+            var url = document.location.href;
+            newdiv.innerHTML += '<br />'
+                + '来源: 洛神葵的博客<br />'
+                + '文章作者: 洛神葵<br />'
+                + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+                + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
 
-        selection.selectAllChildren(newdiv);
-        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
-    });
-</script>
+            selection.selectAllChildren(newdiv);
+            window.setTimeout(function () { bodyElement.removeChild(newdiv); }, 200);
+        });
+    </script>
+    
 
+        <!-- 代码块功能依赖 -->
+        <script type="text/javascript"
+            src="/libs/codeBlock/codeBlockFuction.js"></script>
 
-<!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+        <!-- 代码语言 -->
+        
+            <script type="text/javascript"
+                src="/libs/codeBlock/codeLang.js"></script>
+            
 
-<!-- 代码语言 -->
+                <!-- 代码块复制 -->
+                
+                    <script type="text/javascript"
+                        src="/libs/codeBlock/codeCopy.js"></script>
+                    
 
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-
-
-<!-- 代码块复制 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
-
-
-<!-- 代码块收缩 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
-
-
+                        <!-- 代码块收缩 -->
+                        
+                            <script type="text/javascript"
+                                src="/libs/codeBlock/codeShrink.js"></script>
+                            
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget card" style="background-color: white;">
@@ -1429,7 +1445,7 @@ FROM test_user_scores
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021-2024</span>
+                <span id="year">2021-2025</span>
             
             <span id="year">2021</span>
             <a href="/about" target="_blank">洛神葵</a>
@@ -1438,7 +1454,7 @@ FROM test_user_scores
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">8.3k</span>&nbsp;字
+                class="white-color">11.5k</span>&nbsp;字
             
             
             
@@ -1504,10 +1520,6 @@ FROM test_user_scores
             
             
             
-            <span id="icp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/medias/icp.png" style="vertical-align: text-bottom;" />
-                <a href="https://beian.miit.gov.cn" target="_blank">浙ICP备2021020828</a>
-            </span>
-            
             
             <br>   
             <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1280032724'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1280032724%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));
@@ -1534,10 +1546,6 @@ FROM test_user_scores
 
 
 
-
-    <a href="https://www.zhihu.com/people/LuoShenKui" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/LuoShenKui" data-position="top" data-delay="50">
-        <i class="fab fa-zhihu1">知</i>
-    </a>
 
 
 
@@ -1733,15 +1741,15 @@ $(function () {
     
 
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --><script>
+<script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 preloadRatio: 3,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
 
 </html>

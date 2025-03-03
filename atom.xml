@@ -6,7 +6,7 @@
   <link href="https://luoshenkui.com/atom.xml" rel="self"/>
   
   <link href="https://luoshenkui.com/"/>
-  <updated>2024-04-05T13:59:13.275Z</updated>
+  <updated>2025-03-03T07:37:45.822Z</updated>
   <id>https://luoshenkui.com/</id>
   
   <author>
@@ -17,11 +17,68 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>阿里云polarDB MYSQL 8.0实例配置</title>
+    <title>2024年度总结</title>
+    <link href="https://luoshenkui.com/archives/c2cf88b8.html"/>
+    <id>https://luoshenkui.com/archives/c2cf88b8.html</id>
+    <published>2025-03-03T04:39:19.000Z</published>
+    <updated>2025-03-03T07:37:45.822Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;​        迟到了很久的年度总结，原本不打算写的，并没有总结的习惯，因为迁移了下博客,其实就是从原本的Windows</summary>
+        
+      
+    
+    
+    
+    <category term="年度总结" scheme="https://luoshenkui.com/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/"/>
+    
+    
+    <category term="2024年" scheme="https://luoshenkui.com/tags/2024%E5%B9%B4/"/>
+    
+    <category term="年度总结" scheme="https://luoshenkui.com/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>日常博客维护命令</title>
+    <link href="https://luoshenkui.com/archives/40d07ec0.html"/>
+    <id>https://luoshenkui.com/archives/40d07ec0.html</id>
+    <published>2025-03-02T10:19:22.000Z</published>
+    <updated>2025-03-03T07:38:57.193Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;记录下来，防止忘记！&lt;/p&gt;
+&lt;h2 id=&quot;添加NPM国内淘宝镜像&quot;&gt;&lt;a href=&quot;#添加NPM国内淘宝镜像&quot; class=&quot;headerlink&quot; title=&quot;添加NPM国内淘宝镜像&quot;&gt;&lt;/a&gt;添加NPM国内淘宝镜像&lt;/h2&gt;&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="建站" scheme="https://luoshenkui.com/categories/%E5%BB%BA%E7%AB%99/"/>
+    
+    
+    <category term="博客" scheme="https://luoshenkui.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="维护" scheme="https://luoshenkui.com/tags/%E7%BB%B4%E6%8A%A4/"/>
+    
+    <category term="命令" scheme="https://luoshenkui.com/tags/%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>阿里云polarDB MySQL 8.0实例配置</title>
     <link href="https://luoshenkui.com/archives/8a9028f6.html"/>
     <id>https://luoshenkui.com/archives/8a9028f6.html</id>
     <published>2024-04-05T13:57:24.000Z</published>
-    <updated>2024-04-05T13:59:13.275Z</updated>
+    <updated>2025-03-03T05:43:49.009Z</updated>
     
     
       
@@ -30,44 +87,44 @@
         
     <summary type="html">&lt;ul&gt;
 &lt;li&gt;检查 lower_case_table_names 是否是1；&lt;/li&gt;
-&lt;li&gt;设置：loose_polar_log_bin=ON,就是mysql的</summary>
+&lt;li&gt;设置：loose_polar_log_bin=ON,就是MySQL的</summary>
         
       
     
     
     
-    <category term="mysql" scheme="https://luoshenkui.com/categories/mysql/"/>
+    <category term="MySQL" scheme="https://luoshenkui.com/categories/MySQL/"/>
     
     
-    <category term="polarDB mysql" scheme="https://luoshenkui.com/tags/polarDB-mysql/"/>
+    <category term="polarDB MySQL" scheme="https://luoshenkui.com/tags/polarDB-MySQL/"/>
     
   </entry>
   
   <entry>
-    <title>mysql -虚拟列</title>
+    <title>MySQL -虚拟列</title>
     <link href="https://luoshenkui.com/archives/671c77b3.html"/>
     <id>https://luoshenkui.com/archives/671c77b3.html</id>
     <published>2023-08-27T12:59:51.000Z</published>
-    <updated>2023-08-27T13:46:44.035Z</updated>
+    <updated>2025-03-03T05:43:49.056Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;mysql-虚拟列&quot;&gt;&lt;a href=&quot;#mysql-虚拟列&quot; class=&quot;headerlink&quot; title=&quot;mysql -虚拟列&quot;&gt;&lt;/a&gt;mysql -虚拟列&lt;/h1&gt;&lt;p&gt;● 5.7 版本以上；&lt;/p&gt;
+    <summary type="html">&lt;h1 id=&quot;MySQL-虚拟列&quot;&gt;&lt;a href=&quot;#MySQL-虚拟列&quot; class=&quot;headerlink&quot; title=&quot;MySQL -虚拟列&quot;&gt;&lt;/a&gt;MySQL -虚拟列&lt;/h1&gt;&lt;p&gt;● 5.7 版本以上；&lt;/p&gt;
 &lt;pre</summary>
         
       
     
     
     
-    <category term="mysql" scheme="https://luoshenkui.com/categories/mysql/"/>
+    <category term="MySQL" scheme="https://luoshenkui.com/categories/MySQL/"/>
     
-    
-    <category term="mysql" scheme="https://luoshenkui.com/tags/mysql/"/>
     
     <category term="虚拟列" scheme="https://luoshenkui.com/tags/%E8%99%9A%E6%8B%9F%E5%88%97/"/>
+    
+    <category term="MySQL" scheme="https://luoshenkui.com/tags/MySQL/"/>
     
   </entry>
   
@@ -100,18 +157,18 @@
   </entry>
   
   <entry>
-    <title>帆软 mysql 匹配、环比、同比，隐藏手机号及时间计算</title>
+    <title>帆软 MySQL 匹配、环比、同比，隐藏手机号及时间计算</title>
     <link href="https://luoshenkui.com/archives/5bf850a8.html"/>
     <id>https://luoshenkui.com/archives/5bf850a8.html</id>
     <published>2023-02-12T06:27:56.000Z</published>
-    <updated>2023-02-12T06:42:30.342Z</updated>
+    <updated>2025-03-03T05:43:52.416Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;mysql-匹配、环比、同比，隐藏手机号及时间计算&quot;&gt;&lt;a href=&quot;#mysql-匹配、环比、同比，隐藏手机号及时间计算&quot; class=&quot;headerlink&quot; title=&quot;mysql 匹配、环比、同比，隐藏手机号及时间计算&quot;&gt;&lt;/a&gt;mysql</summary>
+    <summary type="html">&lt;h1 id=&quot;MySQL-匹配、环比、同比，隐藏手机号及时间计算&quot;&gt;&lt;a href=&quot;#MySQL-匹配、环比、同比，隐藏手机号及时间计算&quot; class=&quot;headerlink&quot; title=&quot;MySQL 匹配、环比、同比，隐藏手机号及时间计算&quot;&gt;&lt;/a&gt;MySQL</summary>
         
       
     
@@ -119,16 +176,16 @@
     
     <category term="帆软" scheme="https://luoshenkui.com/categories/%E5%B8%86%E8%BD%AF/"/>
     
-    <category term="mysql" scheme="https://luoshenkui.com/categories/%E5%B8%86%E8%BD%AF/mysql/"/>
+    <category term="MySQL" scheme="https://luoshenkui.com/categories/%E5%B8%86%E8%BD%AF/MySQL/"/>
     
-    
-    <category term="mysql" scheme="https://luoshenkui.com/tags/mysql/"/>
     
     <category term="帆软" scheme="https://luoshenkui.com/tags/%E5%B8%86%E8%BD%AF/"/>
     
     <category term="DATE_SUB" scheme="https://luoshenkui.com/tags/DATE-SUB/"/>
     
     <category term="TIMESTAMPDIFF" scheme="https://luoshenkui.com/tags/TIMESTAMPDIFF/"/>
+    
+    <category term="MySQL" scheme="https://luoshenkui.com/tags/MySQL/"/>
     
   </entry>
   
@@ -137,7 +194,7 @@
     <link href="https://luoshenkui.com/archives/b1b2a417.html"/>
     <id>https://luoshenkui.com/archives/b1b2a417.html</id>
     <published>2023-02-12T06:08:44.000Z</published>
-    <updated>2023-08-27T13:37:51.708Z</updated>
+    <updated>2025-03-03T04:22:16.753Z</updated>
     
     
       
@@ -166,7 +223,7 @@
     <link href="https://luoshenkui.com/archives/d782b799.html"/>
     <id>https://luoshenkui.com/archives/d782b799.html</id>
     <published>2023-02-12T06:08:36.000Z</published>
-    <updated>2023-08-27T13:35:40.319Z</updated>
+    <updated>2025-03-03T04:24:07.710Z</updated>
     
     
       
@@ -190,29 +247,29 @@
   </entry>
   
   <entry>
-    <title>mysql几个特殊查询</title>
+    <title>MySQL几个特殊查询</title>
     <link href="https://luoshenkui.com/archives/2e493eb7.html"/>
     <id>https://luoshenkui.com/archives/2e493eb7.html</id>
     <published>2022-07-18T13:04:38.000Z</published>
-    <updated>2022-07-24T06:06:39.230Z</updated>
+    <updated>2025-03-03T05:43:49.056Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;查询行数&quot;&gt;&lt;a href=&quot;#查询行数&quot; class=&quot;headerlink&quot; title=&quot;查询行数&quot;&gt;&lt;/a&gt;查询行数&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-mysql&quot;&gt;&lt;code</summary>
+    <summary type="html">&lt;h2 id=&quot;查询行数&quot;&gt;&lt;a href=&quot;#查询行数&quot; class=&quot;headerlink&quot; title=&quot;查询行数&quot;&gt;&lt;/a&gt;查询行数&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-MySQL&quot;&gt;&lt;code</summary>
         
       
     
     
     
-    <category term="mysql" scheme="https://luoshenkui.com/categories/mysql/"/>
+    <category term="MySQL" scheme="https://luoshenkui.com/categories/MySQL/"/>
     
-    
-    <category term="mysql" scheme="https://luoshenkui.com/tags/mysql/"/>
     
     <category term="特殊查询" scheme="https://luoshenkui.com/tags/%E7%89%B9%E6%AE%8A%E6%9F%A5%E8%AF%A2/"/>
+    
+    <category term="MySQL" scheme="https://luoshenkui.com/tags/MySQL/"/>
     
   </entry>
   
@@ -221,7 +278,7 @@
     <link href="https://luoshenkui.com/archives/184bfcc1.html"/>
     <id>https://luoshenkui.com/archives/184bfcc1.html</id>
     <published>2022-07-18T12:50:43.000Z</published>
-    <updated>2022-07-18T13:07:49.597Z</updated>
+    <updated>2025-03-03T05:43:49.056Z</updated>
     
     
       
@@ -234,7 +291,7 @@
     
     
     
-    <category term="mysql" scheme="https://luoshenkui.com/categories/mysql/"/>
+    <category term="MySQL" scheme="https://luoshenkui.com/categories/MySQL/"/>
     
     
     <category term="表定义" scheme="https://luoshenkui.com/tags/%E8%A1%A8%E5%AE%9A%E4%B9%89/"/>
@@ -248,14 +305,14 @@
     <link href="https://luoshenkui.com/archives/8791a53a.html"/>
     <id>https://luoshenkui.com/archives/8791a53a.html</id>
     <published>2022-07-18T12:45:43.000Z</published>
-    <updated>2022-07-18T13:07:54.983Z</updated>
+    <updated>2025-03-03T05:43:49.056Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;链接mysql&quot;&gt;&lt;a href=&quot;#链接mysql&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h2 id=&quot;链接MySQL&quot;&gt;&lt;a href=&quot;#链接MySQL&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -277,7 +334,7 @@
     <link href="https://luoshenkui.com/archives/48cc9777.html"/>
     <id>https://luoshenkui.com/archives/48cc9777.html</id>
     <published>2022-07-18T12:31:43.000Z</published>
-    <updated>2022-07-18T13:08:00.871Z</updated>
+    <updated>2025-03-03T05:43:49.056Z</updated>
     
     
       
@@ -306,7 +363,7 @@
     <link href="https://luoshenkui.com/archives/fcd26d55.html"/>
     <id>https://luoshenkui.com/archives/fcd26d55.html</id>
     <published>2022-01-18T14:03:10.000Z</published>
-    <updated>2022-07-18T13:13:28.767Z</updated>
+    <updated>2025-03-03T04:23:03.859Z</updated>
     
     
       
@@ -327,11 +384,11 @@
   </entry>
   
   <entry>
-    <title>mysql分组后排序</title>
+    <title>MySQL分组后排序</title>
     <link href="https://luoshenkui.com/archives/dcce0de4.html"/>
     <id>https://luoshenkui.com/archives/dcce0de4.html</id>
     <published>2022-01-18T14:00:30.000Z</published>
-    <updated>2022-07-18T13:07:43.622Z</updated>
+    <updated>2025-03-03T05:43:49.056Z</updated>
     
     
       
@@ -339,14 +396,14 @@
         
         
     <summary type="html">&lt;p&gt;创建表：&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-mysql&quot;&gt;&lt;code class=&quot;language-mysql&quot;&gt;CREATE TABLE `test_user_scores` (
+&lt;pre class=&quot;line-numbers language-MySQL&quot;&gt;&lt;code class=&quot;language-MySQL&quot;&gt;CREATE TABLE `test_user_scores` (
   `id` int NOT NULL</summary>
         
       
     
     
     
-    <category term="mysql" scheme="https://luoshenkui.com/categories/mysql/"/>
+    <category term="MySQL" scheme="https://luoshenkui.com/categories/MySQL/"/>
     
     
     <category term="分组" scheme="https://luoshenkui.com/tags/%E5%88%86%E7%BB%84/"/>
@@ -360,7 +417,7 @@
     <link href="https://luoshenkui.com/archives/5a8a6c8d.html"/>
     <id>https://luoshenkui.com/archives/5a8a6c8d.html</id>
     <published>2021-09-06T14:33:39.000Z</published>
-    <updated>2022-07-24T06:04:47.417Z</updated>
+    <updated>2025-03-03T04:23:46.361Z</updated>
     
     
       
@@ -388,7 +445,7 @@
     <link href="https://luoshenkui.com/archives/2e493eb7.html"/>
     <id>https://luoshenkui.com/archives/2e493eb7.html</id>
     <published>2021-07-18T10:14:38.000Z</published>
-    <updated>2023-02-12T06:43:03.068Z</updated>
+    <updated>2025-03-03T05:43:49.126Z</updated>
     
     
       
@@ -401,39 +458,37 @@
     
     
     
-    <category term="mysql" scheme="https://luoshenkui.com/categories/mysql/"/>
+    <category term="MySQL" scheme="https://luoshenkui.com/categories/MySQL/"/>
     
-    
-    <category term="mysql" scheme="https://luoshenkui.com/tags/mysql/"/>
     
     <category term="水平分表" scheme="https://luoshenkui.com/tags/%E6%B0%B4%E5%B9%B3%E5%88%86%E8%A1%A8/"/>
     
     <category term="存储过程" scheme="https://luoshenkui.com/tags/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/"/>
     
+    <category term="MySQL" scheme="https://luoshenkui.com/tags/MySQL/"/>
+    
   </entry>
   
   <entry>
-    <title>mysql字符串拆分为列数据</title>
+    <title>MySQL字符串拆分为列数据</title>
     <link href="https://luoshenkui.com/archives/fc8e7585.html"/>
     <id>https://luoshenkui.com/archives/fc8e7585.html</id>
     <published>2021-07-14T13:55:52.000Z</published>
-    <updated>2023-08-27T13:14:31.302Z</updated>
+    <updated>2025-03-03T05:43:49.056Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;mysql字符串拆分为列数据&quot;&gt;&lt;a href=&quot;#mysql字符串拆分为列数据&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;MySQL字符串拆分为列数据&quot;&gt;&lt;a href=&quot;#MySQL字符串拆分为列数据&quot; class=&quot;headerlink&quot;</summary>
         
       
     
     
     
-    <category term="mysql" scheme="https://luoshenkui.com/categories/mysql/"/>
+    <category term="MySQL" scheme="https://luoshenkui.com/categories/MySQL/"/>
     
-    
-    <category term="mysql" scheme="https://luoshenkui.com/tags/mysql/"/>
     
     <category term="help_topic" scheme="https://luoshenkui.com/tags/help-topic/"/>
     
@@ -445,6 +500,8 @@
     
     <category term="字符串转列操作" scheme="https://luoshenkui.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E5%88%97%E6%93%8D%E4%BD%9C/"/>
     
+    <category term="MySQL" scheme="https://luoshenkui.com/tags/MySQL/"/>
+    
   </entry>
   
   <entry>
@@ -452,7 +509,7 @@
     <link href="https://luoshenkui.com/archives/5610cf1c.html"/>
     <id>https://luoshenkui.com/archives/5610cf1c.html</id>
     <published>2021-06-19T07:32:19.000Z</published>
-    <updated>2021-07-11T09:10:01.670Z</updated>
+    <updated>2025-03-03T05:44:43.738Z</updated>
     
     
       
@@ -466,7 +523,7 @@
     
     
     
-    <category term="日志" scheme="https://luoshenkui.com/categories/%E6%97%A5%E5%BF%97/"/>
+    <category term="建站" scheme="https://luoshenkui.com/categories/%E5%BB%BA%E7%AB%99/"/>
     
     
     <category term="日志" scheme="https://luoshenkui.com/tags/%E6%97%A5%E5%BF%97/"/>
@@ -480,7 +537,7 @@
     <link href="https://luoshenkui.com/archives/36b0b24c.html"/>
     <id>https://luoshenkui.com/archives/36b0b24c.html</id>
     <published>2021-06-13T06:58:52.000Z</published>
-    <updated>2021-07-11T09:49:06.227Z</updated>
+    <updated>2025-03-03T04:21:22.755Z</updated>
     
     
       

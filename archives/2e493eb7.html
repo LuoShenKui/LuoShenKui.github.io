@@ -22,7 +22,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="使用存储过程水平分表, 洛神葵 博客 DBA mysql">
+    <meta name="keywords" content="使用存储过程水平分表, 洛神葵 博客 DBA MySQL">
     <meta name="description" content="洛神葵|个人博客|DBA">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -360,94 +360,198 @@
 
 
 
-<main class="container content">
+<main class="post-container content">
 
     
-    <!-- 文章内容详情 -->
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E6%B0%B4%E5%B9%B3%E5%88%86%E8%A1%A8/">
+                                    <span class="chip bg-color">
+                                        水平分表
+                                    </span>
+                                </a>
+                                
+                                <a href="/tags/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/">
+                                    <span class="chip bg-color">
+                                        存储过程
+                                    </span>
+                                </a>
+                                
+                                <a href="/tags/MySQL/">
+                                    <span class="chip bg-color">
+                                        MySQL
+                                    </span>
+                                </a>
+                                
+                        </div>
                         
-                            <a href="/tags/mysql/">
-                                <span class="chip bg-color">mysql</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%B0%B4%E5%B9%B3%E5%88%86%E8%A1%A8/">
-                                <span class="chip bg-color">水平分表</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/">
-                                <span class="chip bg-color">存储过程</span>
-                            </a>
-                        
-                    </div>
-                    
                 </div>
                 <div class="col s5 right-align">
                     
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        <div class="post-cate">
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                                <a href="/categories/MySQL/" class="post-category">
+                                    MySQL
+                                </a>
+                                
+                        </div>
                         
-                            <a href="/categories/mysql/" class="post-category">
-                                mysql
-                            </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
 
             <div class="post-info">
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-18
-                </div>
-                
+                    <div class="post-date info-break-policy">
+                        <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                            2021-07-18
+                    </div>
+                    
 
-                
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-02-12
-                </div>
-                
+                        
+                            <div class="post-date info-break-policy">
+                                <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                                    2025-03-03
+                            </div>
+                            
 
-                
-                <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    313
-                </div>
-                
+                                
+                                    <div class="info-break-policy">
+                                        <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                                            313
+                                    </div>
+                                    
 
-                
-                <div class="info-break-policy">
-                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
-                </div>
-                
+                                        
+                                            <div class="info-break-policy">
+                                                <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                                                    1
+                                                        分
+                                            </div>
+                                            
 
-                
-                    <span id="busuanzi_container_page_pv" style="display:none"></span>
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-				
+                                                
+                                                    <div class="info-break-policy">
+                                                        <span id="busuanzi_container_page_pv" style="display: none">
+                                                            <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                                                                <span id="busuanzi_value_page_pv"></span>
+                                                        </span>
+                                                    </div>
+                                                    
             </div>
         </div>
         <hr class="clearfix">
 
         
 
-        
+                
 
-        <div class="card-content article-card-content">
-            <div id="articleContent">
-                <p>​    我们经常会遇到一些数据表，数据量过大，比如日志表，每天产生几十万条数据，这样积累下来非常不利于数据库查询和维护，有时候甚至连<code>select count(*) from table a</code> 都查不出来，为避免这种情况产生，通常会按照数据创建时间，来按年按月或者按季度进行分表，原表只保留几个月的数据。如下所示，用存储过程来进行处理。</p>
+                        <div class="card-content article-card-content">
+                            <div id="articleContent">
+                                <p>​    我们经常会遇到一些数据表，数据量过大，比如日志表，每天产生几十万条数据，这样积累下来非常不利于数据库查询和维护，有时候甚至连<code>select count(*) from table a</code> 都查不出来，为避免这种情况产生，通常会按照数据创建时间，来按年按月或者按季度进行分表，原表只保留几个月的数据。如下所示，用存储过程来进行处理。</p>
 <p>​    逻辑 就是 先创建分表，结构和原表相同，然后再插入数据，再删除原表插入历史表的数据。</p>
-<h2 id="分表存储过程"><a href="#分表存储过程" class="headerlink" title="分表存储过程"></a>分表存储过程</h2><pre class="line-numbers language-mysql"><code class="language-mysql">CREATE DEFINER=`XXX`@`%` PROCEDURE `up_clear_table_a`()
+<h2 id="分表存储过程"><a href="#分表存储过程" class="headerlink" title="分表存储过程"></a>分表存储过程</h2><pre class="line-numbers language-MySQL"><code class="language-MySQL">CREATE DEFINER=`XXX`@`%` PROCEDURE `up_clear_table_a`()
 BEGIN
     -- 自动前30天前的数据到历史表中
     DECLARE v_stat_date DATE;
@@ -495,11 +599,11 @@ DEALLOCATE PREPARE stmt;
 <p>上面这三句是固定式语句，第一句式 预定义好动态sql语句 stmt，第二句毫无疑问是执行语句，第三局是删除预定义语句stmt。</p>
 <p>DEALLOCATE 英文翻译就是 <code>释放; 解除分配; 释放游标; 删除一个准备好的查询; 归还;</code></p>
 
-                
-            </div>
-            <hr/>
+                                    
+                            </div>
+                            <hr />
 
-            
+                            
 
     <div class="reprint" id="reprint-statement">
         
@@ -553,28 +657,35 @@ DEALLOCATE PREPARE stmt;
 
 
 
-            <div class="tag_share" style="display: block;">
-                <div class="post-meta__tag-list" style="display: inline-block;">
-                    
-                        <div class="article-tag">
-                            
-                                <a href="/tags/mysql/">
-                                    <span class="chip bg-color">mysql</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%B0%B4%E5%B9%B3%E5%88%86%E8%A1%A8/">
-                                    <span class="chip bg-color">水平分表</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/">
-                                    <span class="chip bg-color">存储过程</span>
-                                </a>
-                            
-                        </div>
-                    
-                </div>
-                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+                                <div class="tag_share" style="display: block;">
+                                    <div class="post-meta__tag-list" style="display: inline-block;">
+                                        
+                                            <div class="article-tag">
+                                                
+                                                    <a href="/tags/%E6%B0%B4%E5%B9%B3%E5%88%86%E8%A1%A8/">
+                                                        <span class="chip bg-color">
+                                                            水平分表
+                                                        </span>
+                                                    </a>
+                                                    
+                                                    <a href="/tags/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/">
+                                                        <span class="chip bg-color">
+                                                            存储过程
+                                                        </span>
+                                                    </a>
+                                                    
+                                                    <a href="/tags/MySQL/">
+                                                        <span class="chip bg-color">
+                                                            MySQL
+                                                        </span>
+                                                    </a>
+                                                    
+                                            </div>
+                                            
+                                    </div>
+                                    <div class="post_share"
+                                        style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                                        <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
 <div id="article-share">
 
     
@@ -583,10 +694,10 @@ DEALLOCATE PREPARE stmt;
 
 </div>
 
-                </div>
-            </div>
-            
-                <style>
+                                    </div>
+                                </div>
+                                
+                                    <style>
     #reward {
         margin: 40px 0;
         text-align: center;
@@ -711,20 +822,20 @@ DEALLOCATE PREPARE stmt;
     });
 </script>
 
-            
-        </div>
+                                        
+                        </div>
     </div>
 
     
 
-    
+                
 
-    
+                            
 
-    
+                                        
 
-    
-        <style>
+                                                    
+                                                        <style>
     .valine-card {
         margin: 1.5rem auto;
     }
@@ -986,13 +1097,13 @@ DEALLOCATE PREPARE stmt;
     });
 </script>
 
-    
+                                                            
 
-    
+                                                                
 
-    
+                                                                            
 
-    
+                                                                                        
 
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
@@ -1058,15 +1169,15 @@ DEALLOCATE PREPARE stmt;
                     <div class="card-image">
                         
                         
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/medias/featureimages/4.jpg" class="responsive-img" alt="mysql字符串拆分为列数据">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/medias/featureimages/4.jpg" class="responsive-img" alt="MySQL字符串拆分为列数据">
                         
-                        <span class="card-title">mysql字符串拆分为列数据</span>
+                        <span class="card-title">MySQL字符串拆分为列数据</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            有些时候，我们需要把字符串转为列，这时候我们可以通过mysql.help_topic表来协助操作
+                            有些时候，我们需要把字符串转为列，这时候我们可以通过MySQL.help_topic表来协助操作
                         
                     </div>
                     <div class="publish-info">
@@ -1077,8 +1188,8 @@ DEALLOCATE PREPARE stmt;
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/mysql/" class="post-category">
-                                    mysql
+                            <a href="/categories/MySQL/" class="post-category">
+                                    MySQL
                                 </a>
                             
                             
@@ -1087,10 +1198,6 @@ DEALLOCATE PREPARE stmt;
                 </div>
                 
                 <div class="card-action article-tags">
-                    
-                    <a href="/tags/mysql/">
-                        <span class="chip bg-color">mysql</span>
-                    </a>
                     
                     <a href="/tags/help-topic/">
                         <span class="chip bg-color">help_topic</span>
@@ -1112,6 +1219,10 @@ DEALLOCATE PREPARE stmt;
                         <span class="chip bg-color">字符串转列操作</span>
                     </a>
                     
+                    <a href="/tags/MySQL/">
+                        <span class="chip bg-color">MySQL</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1123,61 +1234,158 @@ DEALLOCATE PREPARE stmt;
 </div>
 
 
+    <script>
+        $('#articleContent').on('copy', function (e) {
+            // IE8 or earlier browser is 'undefined'
+            if (typeof window.getSelection === 'undefined') return;
+
+            var selection = window.getSelection();
+            // if the selection is short let's not annoy our users.
+            if (('' + selection).length < Number.parseInt('120')) {
+                return;
+            }
+
+            // create a div outside of the visible area and fill it with the selected text.
+            var bodyElement = document.getElementsByTagName('body')[0];
+            var newdiv = document.createElement('div');
+            newdiv.style.position = 'absolute';
+            newdiv.style.left = '-99999px';
+            bodyElement.appendChild(newdiv);
+            newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+            // we need a <pre> tag workaround.
+            // otherwise the text inside "pre" loses all the line breaks!
+            if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+                newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+            }
+
+            var url = document.location.href;
+            newdiv.innerHTML += '<br />'
+                + '来源: 洛神葵的博客<br />'
+                + '文章作者: 洛神葵<br />'
+                + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+                + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+            selection.selectAllChildren(newdiv);
+            window.setTimeout(function () { bodyElement.removeChild(newdiv); }, 200);
+        });
+    </script>
+    
+
+        <!-- 代码块功能依赖 -->
+        <script type="text/javascript"
+            src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+        <!-- 代码语言 -->
+        
+            <script type="text/javascript"
+                src="/libs/codeBlock/codeLang.js"></script>
+            
+
+                <!-- 代码块复制 -->
+                
+                    <script type="text/javascript"
+                        src="/libs/codeBlock/codeCopy.js"></script>
+                    
+
+                        <!-- 代码块收缩 -->
+                        
+                            <script type="text/javascript"
+                                src="/libs/codeBlock/codeShrink.js"></script>
+                            
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
 <script>
-    $('#articleContent').on('copy', function (e) {
-        // IE8 or earlier browser is 'undefined'
-        if (typeof window.getSelection === 'undefined') return;
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
 
-        var selection = window.getSelection();
-        // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('120')) {
-            return;
-        }
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
 
-        // create a div outside of the visible area and fill it with the selected text.
-        var bodyElement = document.getElementsByTagName('body')[0];
-        var newdiv = document.createElement('div');
-        newdiv.style.position = 'absolute';
-        newdiv.style.left = '-99999px';
-        bodyElement.appendChild(newdiv);
-        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
 
-        // we need a <pre> tag workaround.
-        // otherwise the text inside "pre" loses all the line breaks!
-        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
-            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
-        }
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
 
-        var url = document.location.href;
-        newdiv.innerHTML += '<br />'
-            + '来源: 洛神葵的博客<br />'
-            + '文章作者: 洛神葵<br />'
-            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
-            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
 
-        selection.selectAllChildren(newdiv);
-        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
     });
 </script>
-
-
-<!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
-
-<!-- 代码语言 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-
-
-<!-- 代码块复制 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
-
-
-<!-- 代码块收缩 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
-
 
     
 
@@ -1248,7 +1456,7 @@ DEALLOCATE PREPARE stmt;
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021-2024</span>
+                <span id="year">2021-2025</span>
             
             <span id="year">2021</span>
             <a href="/about" target="_blank">洛神葵</a>
@@ -1257,7 +1465,7 @@ DEALLOCATE PREPARE stmt;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">8.3k</span>&nbsp;字
+                class="white-color">11.5k</span>&nbsp;字
             
             
             
@@ -1323,10 +1531,6 @@ DEALLOCATE PREPARE stmt;
             
             
             
-            <span id="icp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/medias/icp.png" style="vertical-align: text-bottom;" />
-                <a href="https://beian.miit.gov.cn" target="_blank">浙ICP备2021020828</a>
-            </span>
-            
             
             <br>   
             <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1280032724'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1280032724%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));
@@ -1353,10 +1557,6 @@ DEALLOCATE PREPARE stmt;
 
 
 
-
-    <a href="https://www.zhihu.com/people/LuoShenKui" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/LuoShenKui" data-position="top" data-delay="50">
-        <i class="fab fa-zhihu1">知</i>
-    </a>
 
 
 
@@ -1552,15 +1752,15 @@ $(function () {
     
 
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --><script>
+<script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 preloadRatio: 3,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
 
 </html>
