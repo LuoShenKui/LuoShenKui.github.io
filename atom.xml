@@ -6,7 +6,7 @@
   <link href="https://luoshenkui.com/atom.xml" rel="self"/>
   
   <link href="https://luoshenkui.com/"/>
-  <updated>2025-03-03T08:31:30.112Z</updated>
+  <updated>2025-03-09T03:24:48.181Z</updated>
   <id>https://luoshenkui.com/</id>
   
   <author>
@@ -15,6 +15,92 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>postgresql 常用插件</title>
+    <link href="https://luoshenkui.com/archives/48ec5455.html"/>
+    <id>https://luoshenkui.com/archives/48ec5455.html</id>
+    <published>2025-03-09T03:14:20.000Z</published>
+    <updated>2025-03-09T03:24:48.181Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;postgresql-常用插件&quot;&gt;&lt;a href=&quot;#postgresql-常用插件&quot; class=&quot;headerlink&quot; title=&quot;postgresql 常用插件&quot;&gt;&lt;/a&gt;postgresql</summary>
+        
+      
+    
+    
+    
+    <category term="postgresql" scheme="https://luoshenkui.com/categories/postgresql/"/>
+    
+    
+    <category term="postgresql" scheme="https://luoshenkui.com/tags/postgresql/"/>
+    
+    <category term="插件" scheme="https://luoshenkui.com/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL修改排序规则collation语句</title>
+    <link href="https://luoshenkui.com/archives/95304169.html"/>
+    <id>https://luoshenkui.com/archives/95304169.html</id>
+    <published>2025-03-09T02:56:45.000Z</published>
+    <updated>2025-03-09T03:07:00.043Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;有时候数据的表和字段与其他表和字段不一致，这个时候通常需要查询修改下；&lt;/li&gt;
+&lt;li&gt;比如utf8与utf8mb4, utf8mb4_general_ci 与 utf8_general_ci 等等。&lt;/li&gt;
+&lt;li&gt;MySQL</summary>
+        
+      
+    
+    
+    
+    <category term="MySQL" scheme="https://luoshenkui.com/categories/MySQL/"/>
+    
+    
+    <category term="MySQL" scheme="https://luoshenkui.com/tags/MySQL/"/>
+    
+    <category term="collation" scheme="https://luoshenkui.com/tags/collation/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL DBA日常数据库维护要点</title>
+    <link href="https://luoshenkui.com/archives/85bca6e1.html"/>
+    <id>https://luoshenkui.com/archives/85bca6e1.html</id>
+    <published>2025-03-09T02:29:07.000Z</published>
+    <updated>2025-03-09T03:37:21.931Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;字段定义&quot;&gt;&lt;a href=&quot;#字段定义&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="MySQL" scheme="https://luoshenkui.com/categories/MySQL/"/>
+    
+    
+    <category term="MySQL" scheme="https://luoshenkui.com/tags/MySQL/"/>
+    
+    <category term="维护" scheme="https://luoshenkui.com/tags/%E7%BB%B4%E6%8A%A4/"/>
+    
+    <category term="DBA" scheme="https://luoshenkui.com/tags/DBA/"/>
+    
+  </entry>
   
   <entry>
     <title>商品明细提取HTML的img数据python</title>
@@ -51,7 +137,7 @@
     <link href="https://luoshenkui.com/archives/c2cf88b8.html"/>
     <id>https://luoshenkui.com/archives/c2cf88b8.html</id>
     <published>2025-03-03T04:39:19.000Z</published>
-    <updated>2025-03-03T11:42:51.025Z</updated>
+    <updated>2025-03-09T02:27:28.300Z</updated>
     
     
       
@@ -496,101 +582,6 @@
     <category term="水平分表" scheme="https://luoshenkui.com/tags/%E6%B0%B4%E5%B9%B3%E5%88%86%E8%A1%A8/"/>
     
     <category term="存储过程" scheme="https://luoshenkui.com/tags/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL字符串拆分为列数据</title>
-    <link href="https://luoshenkui.com/archives/fc8e7585.html"/>
-    <id>https://luoshenkui.com/archives/fc8e7585.html</id>
-    <published>2021-07-14T13:55:52.000Z</published>
-    <updated>2025-03-03T05:43:49.056Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;MySQL字符串拆分为列数据&quot;&gt;&lt;a href=&quot;#MySQL字符串拆分为列数据&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="MySQL" scheme="https://luoshenkui.com/categories/MySQL/"/>
-    
-    
-    <category term="MySQL" scheme="https://luoshenkui.com/tags/MySQL/"/>
-    
-    <category term="help_topic" scheme="https://luoshenkui.com/tags/help-topic/"/>
-    
-    <category term="substring_index" scheme="https://luoshenkui.com/tags/substring-index/"/>
-    
-    <category term="date_sub" scheme="https://luoshenkui.com/tags/date-sub/"/>
-    
-    <category term="datediff" scheme="https://luoshenkui.com/tags/datediff/"/>
-    
-    <category term="字符串转列操作" scheme="https://luoshenkui.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E5%88%97%E6%93%8D%E4%BD%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>博客版本更新日志</title>
-    <link href="https://luoshenkui.com/archives/5610cf1c.html"/>
-    <id>https://luoshenkui.com/archives/5610cf1c.html</id>
-    <published>2021-06-19T07:32:19.000Z</published>
-    <updated>2025-03-03T11:46:59.083Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;​    本篇用于介绍本博客网站更新的日志。&lt;/p&gt;
-&lt;h2 id=&quot;版本更新记录&quot;&gt;&lt;a href=&quot;#版本更新记录&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="建站" scheme="https://luoshenkui.com/categories/%E5%BB%BA%E7%AB%99/"/>
-    
-    
-    <category term="日志" scheme="https://luoshenkui.com/tags/%E6%97%A5%E5%BF%97/"/>
-    
-    <category term="更新" scheme="https://luoshenkui.com/tags/%E6%9B%B4%E6%96%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>博客建设</title>
-    <link href="https://luoshenkui.com/archives/36b0b24c.html"/>
-    <id>https://luoshenkui.com/archives/36b0b24c.html</id>
-    <published>2021-06-13T06:58:52.000Z</published>
-    <updated>2025-03-03T04:21:22.755Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h2&gt;&lt;p&gt;​    一时兴起，倒腾了几天终于把个人博客弄得差不多了，后续再修修补补就可以了。&lt;/p&gt;
-&lt;p&gt;​   </summary>
-        
-      
-    
-    
-    
-    <category term="建站" scheme="https://luoshenkui.com/categories/%E5%BB%BA%E7%AB%99/"/>
-    
-    
-    <category term="博客" scheme="https://luoshenkui.com/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-    <category term="GitHub" scheme="https://luoshenkui.com/tags/GitHub/"/>
-    
-    <category term="hexo" scheme="https://luoshenkui.com/tags/hexo/"/>
-    
-    <category term="建站" scheme="https://luoshenkui.com/tags/%E5%BB%BA%E7%AB%99/"/>
     
   </entry>
   
