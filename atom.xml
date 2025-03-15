@@ -6,7 +6,7 @@
   <link href="https://luoshenkui.com/atom.xml" rel="self"/>
   
   <link href="https://luoshenkui.com/"/>
-  <updated>2025-03-09T03:39:31.000Z</updated>
+  <updated>2025-03-15T03:14:05.195Z</updated>
   <id>https://luoshenkui.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mac book air m4 2025款体验</title>
+    <link href="https://luoshenkui.com/archives/28a8e3c9.html"/>
+    <id>https://luoshenkui.com/archives/28a8e3c9.html</id>
+    <published>2025-03-15T03:02:52.000Z</published>
+    <updated>2025-03-15T03:14:05.195Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;​    本人之前在用的mac book 是2017款的air,虽然还能继续用，但是屏幕连1080p都没有，部分开发包也不再支持下载了，还有就是Mac系统最高版本到12就不往上升了。。。计划性报废，17款的连Xcode都下载不了，说是至少2019年的系统才行。。。😊</summary>
+        
+      
+    
+    
+    
+    <category term="产品体验" scheme="https://luoshenkui.com/categories/%E4%BA%A7%E5%93%81%E4%BD%93%E9%AA%8C/"/>
+    
+    
+    <category term="产品体验" scheme="https://luoshenkui.com/tags/%E4%BA%A7%E5%93%81%E4%BD%93%E9%AA%8C/"/>
+    
+    <category term="MacBookAir" scheme="https://luoshenkui.com/tags/MacBookAir/"/>
+    
+  </entry>
   
   <entry>
     <title>postgresql 常用插件</title>
@@ -553,35 +580,6 @@
     <category term="python" scheme="https://luoshenkui.com/tags/python/"/>
     
     <category term="遍历文件夹" scheme="https://luoshenkui.com/tags/%E9%81%8D%E5%8E%86%E6%96%87%E4%BB%B6%E5%A4%B9/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用存储过程水平分表</title>
-    <link href="https://luoshenkui.com/archives/2e493eb7.html"/>
-    <id>https://luoshenkui.com/archives/2e493eb7.html</id>
-    <published>2021-07-18T10:14:38.000Z</published>
-    <updated>2025-03-03T05:43:49.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;​    我们经常会遇到一些数据表，数据量过大，比如日志表，每天产生几十万条数据，这样积累下来非常不利于数据库查询和维护，有时候甚至连&lt;code&gt;select count(*) from table a&lt;/code&gt;</summary>
-        
-      
-    
-    
-    
-    <category term="MySQL" scheme="https://luoshenkui.com/categories/MySQL/"/>
-    
-    
-    <category term="MySQL" scheme="https://luoshenkui.com/tags/MySQL/"/>
-    
-    <category term="水平分表" scheme="https://luoshenkui.com/tags/%E6%B0%B4%E5%B9%B3%E5%88%86%E8%A1%A8/"/>
-    
-    <category term="存储过程" scheme="https://luoshenkui.com/tags/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/"/>
     
   </entry>
   
