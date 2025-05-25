@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://luoshenkui.com/about/index.html</loc>
+    
+    <lastmod>2025-05-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://luoshenkui.com/archives/ed92d07c.html</loc>
     
     <lastmod>2025-05-25</lastmod>
@@ -111,15 +120,6 @@
   
   <url>
     <loc>https://luoshenkui.com/bb/index.html</loc>
-    
-    <lastmod>2025-03-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://luoshenkui.com/about/index.html</loc>
     
     <lastmod>2025-03-09</lastmod>
     
