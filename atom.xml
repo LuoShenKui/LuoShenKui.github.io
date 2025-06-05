@@ -6,7 +6,7 @@
   <link href="https://luoshenkui.com/atom.xml" rel="self"/>
   
   <link href="https://luoshenkui.com/"/>
-  <updated>2025-05-25T19:33:42.181Z</updated>
+  <updated>2025-06-05T16:23:04.919Z</updated>
   <id>https://luoshenkui.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AI 使用体验</title>
+    <link href="https://luoshenkui.com/archives/5485b8d.html"/>
+    <id>https://luoshenkui.com/archives/5485b8d.html</id>
+    <published>2025-06-05T15:36:53.000Z</published>
+    <updated>2025-06-05T16:23:04.919Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt; 各位好，今天我来谈一下最近2年我使用AI遇到的各种问题分享一下。&lt;/p&gt;
+&lt;h2 id=&quot;使用过程及问题&quot;&gt;&lt;a href=&quot;#使用过程及问题&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="AI" scheme="https://luoshenkui.com/categories/AI/"/>
+    
+    
+    <category term="AI" scheme="https://luoshenkui.com/tags/AI/"/>
+    
+    <category term="体验" scheme="https://luoshenkui.com/tags/%E4%BD%93%E9%AA%8C/"/>
+    
+  </entry>
   
   <entry>
     <title>厨艺心得</title>
@@ -558,37 +586,6 @@
     <category term="帆软" scheme="https://luoshenkui.com/tags/%E5%B8%86%E8%BD%AF/"/>
     
     <category term="JS" scheme="https://luoshenkui.com/tags/JS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>帆软 MySQL 匹配、环比、同比，隐藏手机号及时间计算</title>
-    <link href="https://luoshenkui.com/archives/5bf850a8.html"/>
-    <id>https://luoshenkui.com/archives/5bf850a8.html</id>
-    <published>2023-02-12T06:27:56.000Z</published>
-    <updated>2025-03-03T08:24:49.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;MySQL-匹配、环比、同比，隐藏手机号及时间计算&quot;&gt;&lt;a href=&quot;#MySQL-匹配、环比、同比，隐藏手机号及时间计算&quot; class=&quot;headerlink&quot; title=&quot;MySQL 匹配、环比、同比，隐藏手机号及时间计算&quot;&gt;&lt;/a&gt;MySQL</summary>
-        
-      
-    
-    
-    
-    <category term="MySQL" scheme="https://luoshenkui.com/categories/MySQL/"/>
-    
-    
-    <category term="MySQL" scheme="https://luoshenkui.com/tags/MySQL/"/>
-    
-    <category term="帆软" scheme="https://luoshenkui.com/tags/%E5%B8%86%E8%BD%AF/"/>
-    
-    <category term="DATE_SUB" scheme="https://luoshenkui.com/tags/DATE-SUB/"/>
-    
-    <category term="TIMESTAMPDIFF" scheme="https://luoshenkui.com/tags/TIMESTAMPDIFF/"/>
     
   </entry>
   
