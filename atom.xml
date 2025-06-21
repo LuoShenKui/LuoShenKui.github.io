@@ -6,7 +6,7 @@
   <link href="https://luoshenkui.com/atom.xml" rel="self"/>
   
   <link href="https://luoshenkui.com/"/>
-  <updated>2025-06-05T16:23:04.919Z</updated>
+  <updated>2025-06-21T16:20:15.004Z</updated>
   <id>https://luoshenkui.com/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>一件商品的毛利率超过66.67%，可以认定是金融产品，有诈骗的可能</title>
+    <link href="https://luoshenkui.com/archives/bf90f6b.html"/>
+    <id>https://luoshenkui.com/archives/bf90f6b.html</id>
+    <published>2025-06-21T16:17:42.000Z</published>
+    <updated>2025-06-21T16:20:15.004Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;​    众所周知，绝大部分商品的的毛利率（（售价-成本）/售价）在5%-50%</summary>
+        
+      
+    
+    
+    
+    <category term="常识" scheme="https://luoshenkui.com/categories/%E5%B8%B8%E8%AF%86/"/>
+    
+    
+    <category term="随笔" scheme="https://luoshenkui.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+    <category term="常识" scheme="https://luoshenkui.com/tags/%E5%B8%B8%E8%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>AI 使用体验</title>
     <link href="https://luoshenkui.com/archives/5485b8d.html"/>
     <id>https://luoshenkui.com/archives/5485b8d.html</id>
     <published>2025-06-05T15:36:53.000Z</published>
-    <updated>2025-06-05T16:23:04.919Z</updated>
+    <updated>2025-06-05T16:23:26.987Z</updated>
     
     
       
@@ -558,34 +585,6 @@
     <category term="MySQL" scheme="https://luoshenkui.com/tags/MySQL/"/>
     
     <category term="虚拟列" scheme="https://luoshenkui.com/tags/%E8%99%9A%E6%8B%9F%E5%88%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>帆软查询条件限制1个月！</title>
-    <link href="https://luoshenkui.com/archives/9c5ee06b.html"/>
-    <id>https://luoshenkui.com/archives/9c5ee06b.html</id>
-    <published>2023-02-12T06:33:49.000Z</published>
-    <updated>2023-02-12T06:43:30.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;查询条件包含：开始日期，结束日期等等&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token</summary>
-        
-      
-    
-    
-    
-    <category term="帆软" scheme="https://luoshenkui.com/categories/%E5%B8%86%E8%BD%AF/"/>
-    
-    
-    <category term="帆软" scheme="https://luoshenkui.com/tags/%E5%B8%86%E8%BD%AF/"/>
-    
-    <category term="JS" scheme="https://luoshenkui.com/tags/JS/"/>
     
   </entry>
   
