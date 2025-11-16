@@ -6,7 +6,7 @@
   <link href="https://luoshenkui.com/atom.xml" rel="self"/>
   
   <link href="https://luoshenkui.com/"/>
-  <updated>2025-11-10T06:36:59.822Z</updated>
+  <updated>2025-11-16T17:15:22.880Z</updated>
   <id>https://luoshenkui.com/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>AI IDE 使用体验</title>
+    <link href="https://luoshenkui.com/archives/14237080.html"/>
+    <id>https://luoshenkui.com/archives/14237080.html</id>
+    <published>2025-11-16T16:51:06.000Z</published>
+    <updated>2025-11-16T17:15:22.880Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;​    从chat GPT公布</summary>
+        
+      
+    
+    
+    
+    <category term="AI" scheme="https://luoshenkui.com/categories/AI/"/>
+    
+    
+    <category term="AI" scheme="https://luoshenkui.com/tags/AI/"/>
+    
+    <category term="IDE" scheme="https://luoshenkui.com/tags/IDE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>计划性报废企业VS反计划性报废企业，谁的竞争力更强？</title>
     <link href="https://luoshenkui.com/archives/7e883c77.html"/>
     <id>https://luoshenkui.com/archives/7e883c77.html</id>
     <published>2025-11-10T06:31:27.000Z</published>
-    <updated>2025-11-10T06:36:59.822Z</updated>
+    <updated>2025-11-10T06:37:15.502Z</updated>
     
     
       
@@ -560,34 +587,6 @@
     <category term="MySQL" scheme="https://luoshenkui.com/tags/MySQL/"/>
     
     <category term="polarDB" scheme="https://luoshenkui.com/tags/polarDB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>常识1:所有含有虚构词汇的语句不用判定真假对错</title>
-    <link href="https://luoshenkui.com/archives/4ae762d3.html"/>
-    <id>https://luoshenkui.com/archives/4ae762d3.html</id>
-    <published>2024-04-05T04:00:00.000Z</published>
-    <updated>2025-05-25T18:16:52.454Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;​    如题，所有含有虚构词汇的语句不用判定真假对错，这个应该要牢牢放在脑子里，并且时刻记住。明白这个道理后，你就可以看到我们之前所讨论的一些事都是有很多假象且是毫无意义的争执。&lt;/p&gt;
-&lt;p&gt;​   </summary>
-        
-      
-    
-    
-    
-    <category term="常识" scheme="https://luoshenkui.com/categories/%E5%B8%B8%E8%AF%86/"/>
-    
-    
-    <category term="随笔" scheme="https://luoshenkui.com/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-    <category term="常识" scheme="https://luoshenkui.com/tags/%E5%B8%B8%E8%AF%86/"/>
     
   </entry>
   
