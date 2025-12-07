@@ -6,7 +6,7 @@
   <link href="https://luoshenkui.com/atom.xml" rel="self"/>
   
   <link href="https://luoshenkui.com/"/>
-  <updated>2025-11-16T17:27:25.598Z</updated>
+  <updated>2025-12-07T12:39:58.096Z</updated>
   <id>https://luoshenkui.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PostgresSQL大版本17升级的问题</title>
+    <link href="https://luoshenkui.com/archives/3583fd76.html"/>
+    <id>https://luoshenkui.com/archives/3583fd76.html</id>
+    <published>2025-11-16T17:37:25.000Z</published>
+    <updated>2025-12-07T12:39:58.096Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;​    前段时间，阿里云的PG16可以升级到17版本了，遇到了个问题，在这里说下，就是pg_cron插件的问题。通常情况下，pg_cron插件是安装在public</summary>
+        
+      
+    
+    
+    
+    <category term="PostgresSQL" scheme="https://luoshenkui.com/categories/PostgresSQL/"/>
+    
+    
+    <category term="PG17" scheme="https://luoshenkui.com/tags/PG17/"/>
+    
+  </entry>
   
   <entry>
     <title>AI IDE 使用体验</title>
@@ -194,7 +219,7 @@
     <link href="https://luoshenkui.com/archives/48ec5455.html"/>
     <id>https://luoshenkui.com/archives/48ec5455.html</id>
     <published>2025-03-09T03:14:20.000Z</published>
-    <updated>2025-03-09T03:39:31.000Z</updated>
+    <updated>2025-11-16T17:44:40.166Z</updated>
     
     
       
@@ -207,12 +232,12 @@
     
     
     
-    <category term="postgresql" scheme="https://luoshenkui.com/categories/postgresql/"/>
+    <category term="PostgresSQL" scheme="https://luoshenkui.com/categories/PostgresSQL/"/>
     
-    
-    <category term="postgresql" scheme="https://luoshenkui.com/tags/postgresql/"/>
     
     <category term="插件" scheme="https://luoshenkui.com/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+    <category term="PG16" scheme="https://luoshenkui.com/tags/PG16/"/>
     
   </entry>
   
@@ -563,35 +588,6 @@
     <category term="随笔" scheme="https://luoshenkui.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
     <category term="常识" scheme="https://luoshenkui.com/tags/%E5%B8%B8%E8%AF%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>阿里云polarDB MySQL 8.0实例配置</title>
-    <link href="https://luoshenkui.com/archives/8a9028f6.html"/>
-    <id>https://luoshenkui.com/archives/8a9028f6.html</id>
-    <published>2024-04-05T13:57:24.000Z</published>
-    <updated>2025-03-03T08:24:10.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;ul&gt;
-&lt;li&gt;检查 lower_case_table_names 是否是1；&lt;/li&gt;
-&lt;li&gt;设置：loose_polar_log_bin=ON,就是MySQL的</summary>
-        
-      
-    
-    
-    
-    <category term="MySQL" scheme="https://luoshenkui.com/categories/MySQL/"/>
-    
-    
-    <category term="MySQL" scheme="https://luoshenkui.com/tags/MySQL/"/>
-    
-    <category term="polarDB" scheme="https://luoshenkui.com/tags/polarDB/"/>
     
   </entry>
   

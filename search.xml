@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>PostgresSQL大版本17升级的问题</title>
+      <link href="/archives/3583fd76.html"/>
+      <url>/archives/3583fd76.html</url>
+      
+        <content type="html"><![CDATA[<p>​    前段时间，阿里云的PG16可以升级到17版本了，遇到了个问题，在这里说下，就是pg_cron插件的问题。通常情况下，pg_cron插件是安装在public schema里的，但是不知道什么原因，我安装到主库里去了，可能是当初阿里云控制台点击升级出问题了，技术支持给我手动安装的？然后升级的时候， pg_cron不生效了，查了半天，是某个参数的问题。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> PostgresSQL </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> PG17 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>AI IDE 使用体验</title>
       <link href="/archives/14237080.html"/>
       <url>/archives/14237080.html</url>
@@ -176,21 +201,21 @@
       <link href="/archives/48ec5455.html"/>
       <url>/archives/48ec5455.html</url>
       
-        <content type="html"><![CDATA[<h1 id="postgresql-常用插件"><a href="#postgresql-常用插件" class="headerlink" title="postgresql 常用插件"></a>postgresql 常用插件</h1><ul><li>我用的是阿里云的PG16数据库；本地的话个别插件安装比较麻烦，比如pg_jieba；</li></ul><pre class="line-numbers language-mysql"><code class="language-mysql"> SELECT * FROM pg_extension； # 查询已安装的扩展； CREATE EXTENSION pg_stat_statements; # 安装插件；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h3 id="plpgsql"><a href="#plpgsql" class="headerlink" title="plpgsql"></a>plpgsql</h3><ul><li>默认的应该是 plpgsql</li></ul><h3 id="pg-jieba"><a href="#pg-jieba" class="headerlink" title="pg_jieba"></a>pg_jieba</h3><ul><li>向量分词用的，默认的系统分词工具是基于英文的，英文的分词对于中文分词完全不能用；</li></ul><h3 id="pgcrypto"><a href="#pgcrypto" class="headerlink" title="pgcrypto"></a>pgcrypto</h3><ul><li>加解密用的；</li></ul><h3 id="pg-stat-statements"><a href="#pg-stat-statements" class="headerlink" title="pg_stat_statements"></a>pg_stat_statements</h3><ul><li>SQL执行统计插件，一般用于找慢查询；</li><li>用于追踪服务器执行的所有 SQL 语句的规划和执行统计信息。这个模块非常有用于性能分析，它可以帮助数据库管理员找到性能瓶颈，识别慢查询，并分析数据库的资源开销。</li></ul><h3 id="pg-cron"><a href="#pg-cron" class="headerlink" title="pg_cron"></a>pg_cron</h3><ul><li>存储过程的定时任务调度，非常好用，执行结果什么的都整理好的，MySQL的还要自己写存储过程的监控信息；</li><li>使用后会建一个schema,叫corn。</li></ul>]]></content>
+        <content type="html"><![CDATA[<h1 id="postgresql-常用插件"><a href="#postgresql-常用插件" class="headerlink" title="postgresql 常用插件"></a>postgresql 常用插件</h1><ul><li>我用的是阿里云的PG16数据库；本地的话个别插件安装比较麻烦，比如pg_jieba；</li></ul><pre class="line-numbers language-mysql"><code class="language-mysql"> SELECT * FROM pg_extension； # 查询已安装的扩展； CREATE EXTENSION pg_stat_statements; # 安装插件；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h3 id="plpgsql"><a href="#plpgsql" class="headerlink" title="plpgsql"></a>plpgsql</h3><ul><li>默认的应该是 plpgsql</li></ul><h3 id="pg-jieba"><a href="#pg-jieba" class="headerlink" title="pg_jieba"></a>pg_jieba</h3><ul><li>向量分词用的，默认的系统分词工具是基于英文的，英文的分词对于中文分词完全不能用；</li></ul><h3 id="pgcrypto"><a href="#pgcrypto" class="headerlink" title="pgcrypto"></a>pgcrypto</h3><ul><li>加解密用的；</li></ul><h3 id="pg-stat-statements"><a href="#pg-stat-statements" class="headerlink" title="pg_stat_statements"></a>pg_stat_statements</h3><ul><li>SQL执行统计插件，一般用于找慢查询；</li><li>用于追踪服务器执行的所有 SQL 语句的规划和执行统计信息。这个模块非常有用于性能分析，它可以帮助数据库管理员找到性能瓶颈，识别慢查询，并分析数据库的资源开销。</li></ul><h3 id="pg-cron"><a href="#pg-cron" class="headerlink" title="pg_cron"></a>pg_cron</h3><ul><li>存储过程的定时任务调度，非常好用，执行结果什么的都整理好的，MySQL的还要自己写存储过程的监控信息；</li><li>使用后会建一个schema,叫cron。</li></ul>]]></content>
       
       
       <categories>
           
-          <category> postgresql </category>
+          <category> PostgresSQL </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> postgresql </tag>
-            
             <tag> 插件 </tag>
+            
+            <tag> PG16 </tag>
             
         </tags>
       
