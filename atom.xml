@@ -6,7 +6,7 @@
   <link href="https://luoshenkui.com/atom.xml" rel="self"/>
   
   <link href="https://luoshenkui.com/"/>
-  <updated>2025-12-07T12:39:58.096Z</updated>
+  <updated>2025-12-09T12:48:51.227Z</updated>
   <id>https://luoshenkui.com/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>post</title>
+    <link href="https://luoshenkui.com/archives/5a8a6c8d.html"/>
+    <id>https://luoshenkui.com/archives/5a8a6c8d.html</id>
+    <published>2025-12-09T12:10:36.000Z</published>
+    <updated>2025-12-09T12:48:51.227Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;​    大家好，好久不见啊，昨天我的&lt;strong&gt;Long Audio&lt;/strong&gt; IOS APP长时间录音小工具上架IOS</summary>
+        
+      
+    
+    
+    
+    <category term="AI" scheme="https://luoshenkui.com/categories/AI/"/>
+    
+    
+    <category term="LongAudio" scheme="https://luoshenkui.com/tags/LongAudio/"/>
+    
+    <category term="APP" scheme="https://luoshenkui.com/tags/APP/"/>
+    
+  </entry>
+  
+  <entry>
     <title>PostgresSQL大版本17升级的问题</title>
     <link href="https://luoshenkui.com/archives/3583fd76.html"/>
     <id>https://luoshenkui.com/archives/3583fd76.html</id>
     <published>2025-11-16T17:37:25.000Z</published>
-    <updated>2025-12-07T12:39:58.096Z</updated>
+    <updated>2025-12-09T12:11:29.445Z</updated>
     
     
       
@@ -46,7 +73,7 @@
     <link href="https://luoshenkui.com/archives/14237080.html"/>
     <id>https://luoshenkui.com/archives/14237080.html</id>
     <published>2025-11-16T16:51:06.000Z</published>
-    <updated>2025-11-16T17:27:25.598Z</updated>
+    <updated>2025-12-09T05:06:20.445Z</updated>
     
     
       
@@ -335,7 +362,7 @@
     <link href="https://luoshenkui.com/archives/c2cf88b8.html"/>
     <id>https://luoshenkui.com/archives/c2cf88b8.html</id>
     <published>2025-03-03T04:39:19.000Z</published>
-    <updated>2025-05-25T18:58:54.542Z</updated>
+    <updated>2025-12-09T05:06:15.354Z</updated>
     
     
       
@@ -549,34 +576,6 @@
         
     <summary type="html">&lt;p&gt;​    今天来介绍下 从虚构的概念中衍生的都是虚构的。这里要特别说明,这个虚构是不包含数学的，数学是真实逻辑，最初的定理是约定，且逻辑永久生效。&lt;/p&gt;
 &lt;p&gt;​    老规矩，继续举例，大家都知道《易经》吧，什么八卦、紫微斗数等等，因此衍生的命理学、手相学、算卦、</summary>
-        
-      
-    
-    
-    
-    <category term="常识" scheme="https://luoshenkui.com/categories/%E5%B8%B8%E8%AF%86/"/>
-    
-    
-    <category term="随笔" scheme="https://luoshenkui.com/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-    <category term="常识" scheme="https://luoshenkui.com/tags/%E5%B8%B8%E8%AF%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>常识2：明确事件发生的概率问题！避免认为个例代表整体！</title>
-    <link href="https://luoshenkui.com/archives/9e1d617e.html"/>
-    <id>https://luoshenkui.com/archives/9e1d617e.html</id>
-    <published>2024-04-09T04:00:00.000Z</published>
-    <updated>2025-05-25T18:16:18.473Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;​    本期我们要说的是概率问题，这个也很重要。忽略事件发生的概率，是很可怕的，当然我们也经常被忽悠概率相关的问题，以及被忽悠事件的重点。&lt;/p&gt;
-&lt;p&gt;​    老规矩，举例来说：我周围好几个朋友今年都生小孩了，我怎么没感觉到新生儿变少？ </summary>
         
       
     
