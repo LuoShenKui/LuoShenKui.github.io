@@ -345,6 +345,9 @@ header .side-nav .menu-list a {
     height: 50px;
     line-height: 50px;
     color: #34495e !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .mobile-menu-list a i {
@@ -2055,6 +2058,9 @@ footer .copy-right {
     display: inline-block;
     border-radius: 5px;
     color: #000;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .nav-show i[aria-hidden=true] {
