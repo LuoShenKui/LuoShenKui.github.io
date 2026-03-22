@@ -20,7 +20,7 @@
         
 
             <head>
-                <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+                <meta charset="utf-8">
                 <meta name="keywords" content="商品明细提取HTML的img数据python, 洛神葵 博客 DBA MySQL">
                 <meta name="description" content="洛神葵|个人博客|DBA">
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,15 +79,14 @@
 
                     <script src="/libs/jquery/jquery.min.js"></script>
                     <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-            <meta name="generator" content="Hexo 5.4.2">
+            <meta name="generator" content="Hexo 8.1.1">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="洛神葵的博客" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<link rel="alternate" href="/atom.xml" title="洛神葵的博客" type="application/atom+xml">
+</head>
     
 
                 <body>
-                    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
+                    <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
@@ -694,7 +693,7 @@
                                 
                                     <div class="info-break-policy">
                                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                                            245
+                                            242
                                     </div>
                                     
 
@@ -724,55 +723,8 @@
                                 <ul>
 <li>excel 两列数据：product_code,product_detail</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
-<span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取原始 Excel 文件</span></span><br><span class="line">df = pd.read_excel(<span class="string">'C:/Users/xxx/Desktop/product_detail0711.xlsx'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将 'product_detail' 列中的空值和浮点数值转换为字符串类型</span></span><br><span class="line">df[<span class="string">'product_detail'</span>] = df[<span class="string">'product_detail'</span>].fillna(<span class="string">''</span>).astype(<span class="built_in">str</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建存储结果的 DataFrame</span></span><br><span class="line">result_df = pd.DataFrame(columns=[<span class="string">'商品编码'</span>, <span class="string">'图片序号'</span>, <span class="string">'图片链接'</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建空列表存储所有行的数据</span></span><br><span class="line">data = []</span><br><span class="line"></span><br><span class="line"><span class="comment"># 遍历每一行数据</span></span><br><span class="line"><span class="keyword">for</span> index, row <span class="keyword">in</span> df.iterrows():</span><br><span class="line">    <span class="comment"># 提取商品详情页 HTML 内容</span></span><br><span class="line">    html_content = row[<span class="string">'product_detail'</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 使用 BeautifulSoup 解析 HTML</span></span><br><span class="line">    soup = BeautifulSoup(html_content, <span class="string">'html.parser'</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 提取 img 标签</span></span><br><span class="line">    img_tags = soup.find_all(<span class="string">'img'</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 遍历每个 img 标签</span></span><br><span class="line">    <span class="keyword">for</span> i, img_tag <span class="keyword">in</span> <span class="built_in">enumerate</span>(img_tags):</span><br><span class="line">        <span class="comment"># 提取图片链接</span></span><br><span class="line">        img_url = img_tag[<span class="string">'src'</span>]</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 创建字典存储当前行的数据</span></span><br><span class="line">        row_data = {</span><br><span class="line">            <span class="string">'商品编码'</span>: row[<span class="string">'product_code'</span>],</span><br><span class="line">            <span class="string">'图片序号'</span>: i + <span class="number">1</span>,</span><br><span class="line">            <span class="string">'图片链接'</span>: img_url</span><br><span class="line">        }</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 将当前行的数据添加到列表中</span></span><br><span class="line">        data.append(row_data)</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用pd.DataFrame()创建DataFrame对象</span></span><br><span class="line">result_df = pd.DataFrame(data)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将结果保存到新的 Excel 文件</span></span><br><span class="line">result_df.to_excel(<span class="string">'C:/Users/xxx/Desktop/product_detail_result0711-xqt.xlsx'</span>, index=<span class="literal">False</span>)</span><br></pre></td></tr></tbody></table></figure>
 
-<span class="token comment" spellcheck="true"># 读取原始 Excel 文件</span>
-df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_excel<span class="token punctuation">(</span><span class="token string">'C:/Users/xxx/Desktop/product_detail0711.xlsx'</span><span class="token punctuation">)</span>
-
-
-<span class="token comment" spellcheck="true"># 将 'product_detail' 列中的空值和浮点数值转换为字符串类型</span>
-df<span class="token punctuation">[</span><span class="token string">'product_detail'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">'product_detail'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span>astype<span class="token punctuation">(</span>str<span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true"># 新建存储结果的 DataFrame</span>
-result_df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'商品编码'</span><span class="token punctuation">,</span> <span class="token string">'图片序号'</span><span class="token punctuation">,</span> <span class="token string">'图片链接'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true"># 创建空列表存储所有行的数据</span>
-data <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-
-<span class="token comment" spellcheck="true"># 遍历每一行数据</span>
-<span class="token keyword">for</span> index<span class="token punctuation">,</span> row <span class="token keyword">in</span> df<span class="token punctuation">.</span>iterrows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token comment" spellcheck="true"># 提取商品详情页 HTML 内容</span>
-    html_content <span class="token operator">=</span> row<span class="token punctuation">[</span><span class="token string">'product_detail'</span><span class="token punctuation">]</span>
-    
-    <span class="token comment" spellcheck="true"># 使用 BeautifulSoup 解析 HTML</span>
-    soup <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>html_content<span class="token punctuation">,</span> <span class="token string">'html.parser'</span><span class="token punctuation">)</span>
-    
-    <span class="token comment" spellcheck="true"># 提取 img 标签</span>
-    img_tags <span class="token operator">=</span> soup<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">'img'</span><span class="token punctuation">)</span>
-    
-    <span class="token comment" spellcheck="true"># 遍历每个 img 标签</span>
-    <span class="token keyword">for</span> i<span class="token punctuation">,</span> img_tag <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span>img_tags<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token comment" spellcheck="true"># 提取图片链接</span>
-        img_url <span class="token operator">=</span> img_tag<span class="token punctuation">[</span><span class="token string">'src'</span><span class="token punctuation">]</span>
-        
-        <span class="token comment" spellcheck="true"># 创建字典存储当前行的数据</span>
-        row_data <span class="token operator">=</span> <span class="token punctuation">{</span>
-            <span class="token string">'商品编码'</span><span class="token punctuation">:</span> row<span class="token punctuation">[</span><span class="token string">'product_code'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-            <span class="token string">'图片序号'</span><span class="token punctuation">:</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span>
-            <span class="token string">'图片链接'</span><span class="token punctuation">:</span> img_url
-        <span class="token punctuation">}</span>
-        
-        <span class="token comment" spellcheck="true"># 将当前行的数据添加到列表中</span>
-        data<span class="token punctuation">.</span>append<span class="token punctuation">(</span>row_data<span class="token punctuation">)</span>
- 
-
-<span class="token comment" spellcheck="true"># 使用pd.DataFrame()创建DataFrame对象</span>
-result_df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true"># 将结果保存到新的 Excel 文件</span>
-result_df<span class="token punctuation">.</span>to_excel<span class="token punctuation">(</span><span class="token string">'C:/Users/xxx/Desktop/product_detail_result0711-xqt.xlsx'</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                                     
                             </div>
@@ -1359,7 +1311,7 @@ result_df<span class="token punctuation">.</span>to_excel<span class="token punc
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">35.6k</span>&nbsp;字
+                class="white-color">36.6k</span>&nbsp;字
             
             
             
@@ -1664,6 +1616,20 @@ $(function () {
                                                                                                                             type="module"></script>
                                                                                                                         
 
+                
+                
+                <script src="https://unpkg.com/live2d-widget@3.1.4/lib/L2Dwidget.min.js"></script>
+                <script id="live2d-config" type="application/json">{"model":{"jsonPath":"https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}}</script>
+                <script>
+                    window.addEventListener('load', function () {
+                        if (!window.L2Dwidget) return;
+                        var configEl = document.getElementById('live2d-config');
+                        if (!configEl) return;
+                        L2Dwidget.init(JSON.parse(configEl.textContent));
+                    });
+                </script>
+                
+
                 <!-- 注册 Service Worker（首开预缓存核心静态资源） -->
                 <script>
                     if ('serviceWorker' in navigator) {
@@ -1688,6 +1654,6 @@ $(function () {
                 preloadRatio: 3,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body>
 
 </html>

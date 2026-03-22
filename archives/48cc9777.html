@@ -20,7 +20,7 @@
         
 
             <head>
-                <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+                <meta charset="utf-8">
                 <meta name="keywords" content="帆软报表查询某字段是否存在，并输出到excel, 洛神葵 博客 DBA MySQL">
                 <meta name="description" content="洛神葵|个人博客|DBA">
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,15 +79,14 @@
 
                     <script src="/libs/jquery/jquery.min.js"></script>
                     <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-            <meta name="generator" content="Hexo 5.4.2">
+            <meta name="generator" content="Hexo 8.1.1">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="洛神葵的博客" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<link rel="alternate" href="/atom.xml" title="洛神葵的博客" type="application/atom+xml">
+</head>
     
 
                 <body>
-                    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
+                    <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
@@ -700,7 +699,7 @@
                                 
                                     <div class="info-break-policy">
                                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                                            886
+                                            880
                                     </div>
                                     
 
@@ -728,78 +727,55 @@
                         <div class="card-content article-card-content">
                             <div id="articleContent">
                                 <h2 id="需求："><a href="#需求：" class="headerlink" title="需求："></a>需求：</h2><ul>
-<li><p>有时候MySQL某个数据表不再使用或者修改，则需要在一堆报表里（通常有几百或者上千个）找出来使用这个数据表的所有报表并进行修改，我们不可能一个个的去点开来看里面的sql有没有，可以通过python进行快速查找，节约时间。</p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2></li>
-<li><p>帆软报表文件通常以.cpt结尾，.frm文件不考虑。</p>
-</li>
-<li><p>可以通过OS包来循环查找文件夹下每一个文件，将文件名记录在list里,通过pandas包来输出到excel。</p>
-</li>
-<li><p>软件可以使用anaconda里的自带的VS CODE，这样就不用在本地环境下载pandas等包了，下载速度实在是太慢了。</p>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="步骤1：实现循环读取文件名"><a href="#步骤1：实现循环读取文件名" class="headerlink" title="步骤1：实现循环读取文件名"></a>步骤1：实现循环读取文件名</h3></li>
-<li><p>实现循环读取文件的名称；</p>
-</li>
-<li><p>使用<strong>os.walk()</strong> 方法，详细使用见 <a target="_blank" rel="noopener" href="https://www.runoob.com/python/os-walk.html">https://www.runoob.com/python/os-walk.html</a>；</p>
-</li>
-<li><p>路径要用r来标识是路径url；<br>```python<br>import os</p>
-</li>
+<li>有时候MySQL某个数据表不再使用或者修改，则需要在一堆报表里（通常有几百或者上千个）找出来使用这个数据表的所有报表并进行修改，我们不可能一个个的去点开来看里面的sql有没有，可以通过python进行快速查找，节约时间。</li>
 </ul>
-<p>path = r’D:\softwares\FineReport_10.0\webapps\webroot\WEB-INF\reportlets’<br>findstring = ‘sp_product’</p>
-<p>for root, dirs, files in os.walk(path):<br>    for name in files:<br>        if name.endswith(‘.cpt’):<br>            filepath = open(os.path.join(root, name), ‘r’, encoding=’utf-8’)<br>            if findstring in filepath.read():<br>                print(filepath.name.replace(path, ‘’))</p>
-<pre><code>
-- 上面的输出是 \a\b\c.cpt  这种格式的
-### 步骤2：优化
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ul>
+<li>帆软报表文件通常以.cpt结尾，.frm文件不考虑。</li>
+<li>可以通过OS包来循环查找文件夹下每一个文件，将文件名记录在list里,通过pandas包来输出到excel。</li>
+<li>软件可以使用anaconda里的自带的VS CODE，这样就不用在本地环境下载pandas等包了，下载速度实在是太慢了。</li>
+</ul>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="步骤1：实现循环读取文件名"><a href="#步骤1：实现循环读取文件名" class="headerlink" title="步骤1：实现循环读取文件名"></a>步骤1：实现循环读取文件名</h3><ul>
+<li>实现循环读取文件的名称；</li>
+<li>使用<strong>os.walk()</strong> 方法，详细使用见 <a target="_blank" rel="noopener" href="https://www.runoob.com/python/os-walk.html">https://www.runoob.com/python/os-walk.html</a>；</li>
+<li>路径要用r来标识是路径url；</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">path = <span class="string">r'D:\softwares\FineReport_10.0\webapps\webroot\WEB-INF\reportlets'</span></span><br><span class="line">findstring = <span class="string">'sp_product'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> os.walk(path):</span><br><span class="line">    <span class="keyword">for</span> name <span class="keyword">in</span> files:</span><br><span class="line">        <span class="keyword">if</span> name.endswith(<span class="string">'.cpt'</span>):</span><br><span class="line">            filepath = <span class="built_in">open</span>(os.path.join(root, name), <span class="string">'r'</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">            <span class="keyword">if</span> findstring <span class="keyword">in</span> filepath.read():</span><br><span class="line">                <span class="built_in">print</span>(filepath.name.replace(path, <span class="string">''</span>))</span><br></pre></td></tr></tbody></table></figure>
 
-- 不符合网址的左斜杠要求，而第一个字符右斜杠是不需要的，我们要去掉，改一下最后一句，在最后加上替换；
-```python
-.replace('\\','/') 
-</code></pre>
+<ul>
+<li>上面的输出是 \a\b\c.cpt  这种格式的</li>
+</ul>
+<h3 id="步骤2：优化"><a href="#步骤2：优化" class="headerlink" title="步骤2：优化"></a>步骤2：优化</h3><ul>
+<li>不符合网址的左斜杠要求，而第一个字符右斜杠是不需要的，我们要去掉，改一下最后一句，在最后加上替换；</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.replace(<span class="string">'\\'</span>,<span class="string">'/'</span>) </span><br></pre></td></tr></tbody></table></figure>
+
 <ul>
 <li>把print里的数据改为一个单独的list字段，看起来清楚些；</li>
-<li>利用<strong>切片</strong>功能去掉第一个字符；<br>```python<br>import os</li>
+<li>利用<strong>切片</strong>功能去掉第一个字符；</li>
 </ul>
-<p>path = r’D:\softwares\FineReport_10.0\webapps\webroot\WEB-INF\reportlets’<br>findstring = ‘sp_product’<br>liststring = []</p>
-<p>for root, dirs, files in os.walk(path):<br>    for name in files:<br>        if name.endswith(‘.cpt’):<br>            filepath = open(os.path.join(root, name), ‘r’, encoding=’utf-8’)<br>            if findstring in filepath.read():<br>                filename = filepath.name.replace(path, ‘’).replace(‘\‘,’/‘)<br>                liststring.append(filename[1:])<br>                print(liststring)</p>
-<pre><code>
-- 上面的输出结果是 ['a/b/c.cpt'] 这种格式的，接下来就是存储到excel里了;
-### 步骤3：存储到excel
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">path = <span class="string">r'D:\softwares\FineReport_10.0\webapps\webroot\WEB-INF\reportlets'</span></span><br><span class="line">findstring = <span class="string">'sp_product'</span></span><br><span class="line">liststring = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> os.walk(path):</span><br><span class="line">    <span class="keyword">for</span> name <span class="keyword">in</span> files:</span><br><span class="line">        <span class="keyword">if</span> name.endswith(<span class="string">'.cpt'</span>):</span><br><span class="line">            filepath = <span class="built_in">open</span>(os.path.join(root, name), <span class="string">'r'</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">            <span class="keyword">if</span> findstring <span class="keyword">in</span> filepath.read():</span><br><span class="line">                filename = filepath.name.replace(path, <span class="string">''</span>).replace(<span class="string">'\\'</span>,<span class="string">'/'</span>) </span><br><span class="line">                liststring.append(filename[<span class="number">1</span>:])</span><br><span class="line">                <span class="built_in">print</span>(liststring)</span><br></pre></td></tr></tbody></table></figure>
 
-- 利用pandas包的to_excel来输出到excel里；
-- 文件路径的 **D:\files\ **可以去掉，这样就是相对路径了，文件会生成在当前目录下；
-```python
-import os
-import pandas as pd
+<ul>
+<li>上面的输出结果是 [‘a/b/c.cpt’] 这种格式的，接下来就是存储到excel里了;</li>
+</ul>
+<h3 id="步骤3：存储到excel"><a href="#步骤3：存储到excel" class="headerlink" title="步骤3：存储到excel"></a>步骤3：存储到excel</h3><ul>
+<li>利用pandas包的to_excel来输出到excel里；</li>
+<li>文件路径的 **D:\files\ **可以去掉，这样就是相对路径了，文件会生成在当前目录下；</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">path = <span class="string">r'D:\softwares\FineReport_10.0\webapps\webroot\WEB-INF\reportlets'</span></span><br><span class="line">findstring = <span class="string">'sp_product'</span></span><br><span class="line">liststring = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> os.walk(path):</span><br><span class="line">    <span class="keyword">for</span> name <span class="keyword">in</span> files:</span><br><span class="line">        <span class="keyword">if</span> name.endswith(<span class="string">'.cpt'</span>):</span><br><span class="line">            filepath = <span class="built_in">open</span>(os.path.join(root, name), <span class="string">'r'</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">            <span class="keyword">if</span> findstring <span class="keyword">in</span> filepath.read():</span><br><span class="line">                filename = filepath.name.replace(path, <span class="string">''</span>).replace(<span class="string">'\\'</span>,<span class="string">'/'</span>) </span><br><span class="line">                liststring.append(filename[<span class="number">1</span>:])</span><br><span class="line">                <span class="comment">#print(liststring)</span></span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(liststring,columns=[<span class="string">'报表名称'</span>])</span><br><span class="line">excelname = <span class="string">r"D:\files\帆软报表中存在"</span>+findstring+<span class="string">"数据的文件名称.xlsx"</span></span><br><span class="line">df.to_excel(excelname,index=<span class="literal">False</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"输出到excel成功！"</span>)</span><br></pre></td></tr></tbody></table></figure>
 
-path = r'D:\softwares\FineReport_10.0\webapps\webroot\WEB-INF\reportlets'
-findstring = 'sp_product'
-liststring = []
 
-for root, dirs, files in os.walk(path):
-    for name in files:
-        if name.endswith('.cpt'):
-            filepath = open(os.path.join(root, name), 'r', encoding='utf-8')
-            if findstring in filepath.read():
-                filename = filepath.name.replace(path, '').replace('\\','/') 
-                liststring.append(filename[1:])
-                #print(liststring)
 
-df = pd.DataFrame(liststring,columns=['报表名称'])
-excelname = r"D:\files\帆软报表中存在"+findstring+"数据的文件名称.xlsx"
-df.to_excel(excelname,index=False)
-print("输出到excel成功！")
-</code></pre>
 <h3 id="步骤4：优化"><a href="#步骤4：优化" class="headerlink" title="步骤4：优化"></a>步骤4：优化</h3><ul>
 <li>实际上，没有查找到数据的话，并不需要输出excel；</li>
 <li>文件名最好带上当前日期，方便识别；</li>
-<li>今天查询是** datetime<strong>包的</strong>today= datetime.date.today()** ，不过要转换为字符串；<br>```python<br>import os<br>import pandas as pd<br>import datetime</li>
+<li>今天查询是** datetime<strong>包的</strong>today= datetime.date.today()** ，不过要转换为字符串；</li>
 </ul>
-<p>path = r’D:\softwares\FineReport_10.0\webapps\webroot\WEB-INF\reportlets’<br>findstring = ‘sp_product’<br>liststring = []</p>
-<p>for root, dirs, files in os.walk(path):<br>    for name in files:<br>        if name.endswith(‘.cpt’):<br>            filepath = open(os.path.join(root, name), ‘r’, encoding=’utf-8’)<br>            if findstring in filepath.read():<br>                filename = filepath.name.replace(path, ‘’).replace(‘\‘,’/‘)<br>                liststring.append(filename[1:])<br>                #print(liststring)</p>
-<p>if len(liststring)==0:<br>    print(“未找到此字段！”)<br>else :<br>    today= datetime.date.today()<br>    df = pd.DataFrame(liststring,columns=[‘报表名称’])<br>    excelname = r”D:\files\帆软报表中存在”+findstring+”数据的文件名称-“+today.strftime(‘%Y-%m-%d’)+”.xlsx”<br>    df.to_excel(excelname,index=False)<br>    print(“输出到excel成功！”)</p>
-<pre><code>### 步骤5：检测是否有bug
-
-- 目前看来暂无bug；
-- 是否有其他优化点：当然是有的，比如写成几个函数，文件路径判断，等等，这个由于是自己用的，就不用这么麻烦了。
-</code></pre>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line">path = <span class="string">r'D:\softwares\FineReport_10.0\webapps\webroot\WEB-INF\reportlets'</span></span><br><span class="line">findstring = <span class="string">'sp_product'</span></span><br><span class="line">liststring = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> os.walk(path):</span><br><span class="line">    <span class="keyword">for</span> name <span class="keyword">in</span> files:</span><br><span class="line">        <span class="keyword">if</span> name.endswith(<span class="string">'.cpt'</span>):</span><br><span class="line">            filepath = <span class="built_in">open</span>(os.path.join(root, name), <span class="string">'r'</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">            <span class="keyword">if</span> findstring <span class="keyword">in</span> filepath.read():</span><br><span class="line">                filename = filepath.name.replace(path, <span class="string">''</span>).replace(<span class="string">'\\'</span>,<span class="string">'/'</span>) </span><br><span class="line">                liststring.append(filename[<span class="number">1</span>:])</span><br><span class="line">                <span class="comment">#print(liststring)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(liststring)==<span class="number">0</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"未找到此字段！"</span>) </span><br><span class="line"><span class="keyword">else</span> :</span><br><span class="line">    today= datetime.date.today()    </span><br><span class="line">    df = pd.DataFrame(liststring,columns=[<span class="string">'报表名称'</span>])</span><br><span class="line">    excelname = <span class="string">r"D:\files\帆软报表中存在"</span>+findstring+<span class="string">"数据的文件名称-"</span>+today.strftime(<span class="string">'%Y-%m-%d'</span>)+<span class="string">".xlsx"</span></span><br><span class="line">    df.to_excel(excelname,index=<span class="literal">False</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"输出到excel成功！"</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="步骤5：检测是否有bug"><a href="#步骤5：检测是否有bug" class="headerlink" title="步骤5：检测是否有bug"></a>步骤5：检测是否有bug</h3><ul>
+<li>目前看来暂无bug；</li>
+<li>是否有其他优化点：当然是有的，比如写成几个函数，文件路径判断，等等，这个由于是自己用的，就不用这么麻烦了。</li>
+</ul>
 
                                     
                             </div>
@@ -1388,7 +1364,7 @@ print("输出到excel成功！")
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">35.6k</span>&nbsp;字
+                class="white-color">36.6k</span>&nbsp;字
             
             
             
@@ -1693,6 +1669,20 @@ $(function () {
                                                                                                                             type="module"></script>
                                                                                                                         
 
+                
+                
+                <script src="https://unpkg.com/live2d-widget@3.1.4/lib/L2Dwidget.min.js"></script>
+                <script id="live2d-config" type="application/json">{"model":{"jsonPath":"https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}}</script>
+                <script>
+                    window.addEventListener('load', function () {
+                        if (!window.L2Dwidget) return;
+                        var configEl = document.getElementById('live2d-config');
+                        if (!configEl) return;
+                        L2Dwidget.init(JSON.parse(configEl.textContent));
+                    });
+                </script>
+                
+
                 <!-- 注册 Service Worker（首开预缓存核心静态资源） -->
                 <script>
                     if ('serviceWorker' in navigator) {
@@ -1717,6 +1707,6 @@ $(function () {
                 preloadRatio: 3,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body>
 
 </html>

@@ -13,36 +13,36 @@ const PRECACHE_ASSETS = [
   '/libs/lightGallery/js/lightgallery-all.min.js',
 ];
 
-self.addEventListener('install', (event) =&gt; {
+self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) =&gt; cache.addAll(PRECACHE_ASSETS))
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(PRECACHE_ASSETS))
   );
   self.skipWaiting();
 });
 
-self.addEventListener('activate', (event) =&gt; {
+self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then((keys) =&gt; Promise.all(keys.map((key) =&gt; (key === CACHE_NAME ? null : caches.delete(key)))))
+    caches.keys().then((keys) => Promise.all(keys.map((key) => (key === CACHE_NAME ? null : caches.delete(key)))))
   );
   self.clients.claim();
 });
 
-self.addEventListener('fetch', (event) =&gt; {
+self.addEventListener('fetch', (event) => {
   const req = event.request;
   if (req.method !== 'GET') return;
 
   event.respondWith(
-    caches.match(req).then((cached) =&gt; {
+    caches.match(req).then((cached) => {
       if (cached) return cached;
-      return fetch(req).then((res) =&gt; {
-        if (!res || res.status !== 200 || (res.type !== 'basic' &amp;&amp; res.type !== 'cors')) return res;
+      return fetch(req).then((res) => {
+        if (!res || res.status !== 200 || (res.type !== 'basic' && res.type !== 'cors')) return res;
         const accept = req.headers.get('Accept') || '';
         if (!accept.includes('text/html')) {
           const clone = res.clone();
-          caches.open(CACHE_NAME).then((cache) =&gt; cache.put(req, clone));
+          caches.open(CACHE_NAME).then((cache) => cache.put(req, clone));
         }
         return res;
-      }).catch(() =&gt; caches.match('/index.html'));
+      }).catch(() => caches.match('/index.html'));
     })
   );
 });

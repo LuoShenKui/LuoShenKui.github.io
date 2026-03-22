@@ -20,7 +20,7 @@
         
 
             <head>
-                <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+                <meta charset="utf-8">
                 <meta name="keywords" content="博客建设, 洛神葵 博客 DBA MySQL">
                 <meta name="description" content="洛神葵|个人博客|DBA">
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,15 +79,14 @@
 
                     <script src="/libs/jquery/jquery.min.js"></script>
                     <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-            <meta name="generator" content="Hexo 5.4.2">
+            <meta name="generator" content="Hexo 8.1.1">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="洛神葵的博客" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<link rel="alternate" href="/atom.xml" title="洛神葵的博客" type="application/atom+xml">
+</head>
     
 
                 <body>
-                    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
+                    <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
@@ -713,7 +712,7 @@
                                         
                                             <div class="info-break-policy">
                                                 <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                                                    3
+                                                    4
                                                         分
                                             </div>
                                             
@@ -733,35 +732,28 @@
 
                         <div class="card-content article-card-content">
                             <div id="articleContent">
-                                <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>​    一时兴起，倒腾了几天终于把个人博客弄得差不多了，后续再修修补补就可以了。</p>
-<p>​    本博客基于<strong>Hexo</strong>框架搭建，用到了<strong>hexo-theme-matery</strong> 主体，仿照<a target="_blank" rel="noopener" href="https://shw2018.github.io/posts/6e8839eb.html">洪卫大佬</a>的详细介绍，一步步走下来就可以了。下面我介绍一下我操作过程中遇到的问题，供大家参考。</p>
-<h2 id="问题与解决"><a href="#问题与解决" class="headerlink" title="问题与解决"></a>问题与解决</h2><h3 id="1-博客文件名称"><a href="#1-博客文件名称" class="headerlink" title="1.博客文件名称"></a>1.博客文件名称</h3><p>​    如果是直接从github上下载 <a target="_blank" rel="noopener" href="https://github.com/shw2018/hexo-theme-matery">hexo-theme-matery</a>源码，如果下载的是zip格式，则是会带 master等分支名称，下载解压完之后记得要去掉分支名称。git clone 的话就没这个问题。</p>
-<h3 id="2-依赖github"><a href="#2-依赖github" class="headerlink" title="2.依赖github"></a>2.依赖github</h3><p>​    根目录下的_config.yml 文件中的依赖，有两个注意点：</p>
+                                <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>​	一时兴起，倒腾了几天终于把个人博客弄得差不多了，后续再修修补补就可以了。</p>
+<p>​	本博客基于<strong>Hexo</strong>框架搭建，用到了<strong>hexo-theme-matery</strong> 主体，仿照<a target="_blank" rel="noopener" href="https://shw2018.github.io/posts/6e8839eb.html">洪卫大佬</a>的详细介绍，一步步走下来就可以了。下面我介绍一下我操作过程中遇到的问题，供大家参考。</p>
+<h2 id="问题与解决"><a href="#问题与解决" class="headerlink" title="问题与解决"></a>问题与解决</h2><h3 id="1-博客文件名称"><a href="#1-博客文件名称" class="headerlink" title="1.博客文件名称"></a>1.博客文件名称</h3><p>​	如果是直接从github上下载 <a target="_blank" rel="noopener" href="https://github.com/shw2018/hexo-theme-matery">hexo-theme-matery</a>源码，如果下载的是zip格式，则是会带 master等分支名称，下载解压完之后记得要去掉分支名称。git clone 的话就没这个问题。</p>
+<h3 id="2-依赖github"><a href="#2-依赖github" class="headerlink" title="2.依赖github"></a>2.依赖github</h3><p>​	根目录下的_config.yml 文件中的依赖，有两个注意点：</p>
 <ul>
 <li>一个是仓库要写成SSH格式的，不要写成https 格式的，如果写成 <a target="_blank" rel="noopener" href="https://github.com/XXXX.git">https://github.com/XXXX.git</a> 这种格式的，则在你提交更新的时候，会让你输入登录密码（<del>十分痛苦！</del>）。</li>
 <li>分支要写成master或者是main,跟你的仓库保持一致，要么改配置这里，要么改github 仓库的分支；</li>
 </ul>
-<pre class="line-numbers language-Yml"><code class="language-Yml">deploy:
- type: git
- repository: git@github.com:LuoShenKui/LuoShenKui.github.io.git
- branch: master
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="3-配置修改注意事项"><a href="#3-配置修改注意事项" class="headerlink" title="3. 配置修改注意事项"></a>3. 配置修改注意事项</h3><p>​    注意修改配置时：</p>
+<figure class="highlight yml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"> <span class="attr">repository:</span> <span class="string">git@github.com:LuoShenKui/LuoShenKui.github.io.git</span></span><br><span class="line"> <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="3-配置修改注意事项"><a href="#3-配置修改注意事项" class="headerlink" title="3. 配置修改注意事项"></a>3. 配置修改注意事项</h3><p>​	注意修改配置时：</p>
 <ul>
 <li>冒号需要是英文的，不能是中文的。</li>
 <li>冒号与后续的配置要隔开一个空格！</li>
 <li>不要用TXT文件打开配置进行修改，最好用VSCODE之类的软件打开。（假设你用txt修改，然后生成网页的时候报错了，你就知道痛苦了！找不到哪里有问题！）</li>
 <li>VSCODE 要单独关闭页面才会提示保存，如果直接关闭软件是不会保存的。</li>
 </ul>
-<h3 id="4-LOGO设计"><a href="#4-LOGO设计" class="headerlink" title="4.LOGO设计"></a>4.LOGO设计</h3><p>​    我是拿画图工具直接画了一个，避免各种问题，后续再替换掉吧（笑）。注意logo文件不要太大。</p>
-<h3 id="5-设置B站链接"><a href="#5-设置B站链接" class="headerlink" title="5.设置B站链接"></a>5.设置B站链接</h3><p>​    我去 <a target="_blank" rel="noopener" href="https://fontawesome.com/icons">Font Awesome</a> 里没有找到B站的图标，就用了fa-bootstrap 的图标。</p>
-<pre class="line-numbers language-ejs"><code class="language-ejs"><% if (theme.socialLink.bilibili) { %>
-    <a href="<%= theme.socialLink.bilibili %>" class="tooltipped" target="_blank" data-tooltip="关注我的B站: <%= theme.socialLink.bilibili %>" data-position="top" data-delay="50">
-        <i class="fab fa-bootstrap">站</i>
-    </a>
-<% } %>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="6-live2d问题"><a href="#6-live2d问题" class="headerlink" title="6.live2d问题"></a>6.live2d问题</h3><p>​    我设置了live2d,但是在右边的话会遮挡按钮，在配置里改到左边就可以了。</p>
+<h3 id="4-LOGO设计"><a href="#4-LOGO设计" class="headerlink" title="4.LOGO设计"></a>4.LOGO设计</h3><p>​	我是拿画图工具直接画了一个，避免各种问题，后续再替换掉吧（笑）。注意logo文件不要太大。</p>
+<h3 id="5-设置B站链接"><a href="#5-设置B站链接" class="headerlink" title="5.设置B站链接"></a>5.设置B站链接</h3><p>​	我去 <a target="_blank" rel="noopener" href="https://fontawesome.com/icons">Font Awesome</a> 里没有找到B站的图标，就用了fa-bootstrap 的图标。</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (theme.socialLink.bilibili) { %&gt;</span><br><span class="line">    &lt;a href="&lt;%= theme.socialLink.bilibili %&gt;" class="tooltipped" target="_blank" data-tooltip="关注我的B站: &lt;%= theme.socialLink.bilibili %&gt;" data-position="top" data-delay="50"&gt;</span><br><span class="line">        &lt;i class="fab fa-bootstrap"&gt;站&lt;/i&gt;</span><br><span class="line">    &lt;/a&gt;</span><br><span class="line">&lt;% } %&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="6-live2d问题"><a href="#6-live2d问题" class="headerlink" title="6.live2d问题"></a>6.live2d问题</h3><p>​	我设置了live2d,但是在右边的话会遮挡按钮，在配置里改到左边就可以了。</p>
 <h3 id="7-文章编写"><a href="#7-文章编写" class="headerlink" title="7.文章编写"></a>7.文章编写</h3><ul>
 <li>表头也要是冒号+空格的方式；</li>
 </ul>
@@ -795,7 +787,7 @@
 <h3 id="14-百度收录"><a href="#14-百度收录" class="headerlink" title="14. 百度收录"></a>14. 百度收录</h3><ul>
 <li>如果你百度站点是带www的，而你站点url 是不带 www 的，此时使用主动推送的话，可能会显示提交失败，站点改成带www的就可以了（百度已提交的站点改不了！），或者不用主动推送也是可以的；</li>
 </ul>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>​    其他问题可在评论区指出，大家一起学习。</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>​	其他问题可在评论区指出，大家一起学习。</p>
 
                                     
                             </div>
@@ -1399,7 +1391,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">35.6k</span>&nbsp;字
+                class="white-color">36.6k</span>&nbsp;字
             
             
             
@@ -1704,6 +1696,20 @@ $(function () {
                                                                                                                             type="module"></script>
                                                                                                                         
 
+                
+                
+                <script src="https://unpkg.com/live2d-widget@3.1.4/lib/L2Dwidget.min.js"></script>
+                <script id="live2d-config" type="application/json">{"model":{"jsonPath":"https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}}</script>
+                <script>
+                    window.addEventListener('load', function () {
+                        if (!window.L2Dwidget) return;
+                        var configEl = document.getElementById('live2d-config');
+                        if (!configEl) return;
+                        L2Dwidget.init(JSON.parse(configEl.textContent));
+                    });
+                </script>
+                
+
                 <!-- 注册 Service Worker（首开预缓存核心静态资源） -->
                 <script>
                     if ('serviceWorker' in navigator) {
@@ -1728,6 +1734,6 @@ $(function () {
                 preloadRatio: 3,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body>
 
 </html>

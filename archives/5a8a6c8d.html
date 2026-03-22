@@ -20,7 +20,7 @@
         
 
             <head>
-                <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+                <meta charset="utf-8">
                 <meta name="keywords" content="python遍历文件夹, 洛神葵 博客 DBA MySQL">
                 <meta name="description" content="洛神葵|个人博客|DBA">
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,15 +79,14 @@
 
                     <script src="/libs/jquery/jquery.min.js"></script>
                     <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-            <meta name="generator" content="Hexo 5.4.2">
+            <meta name="generator" content="Hexo 8.1.1">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="洛神葵的博客" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<link rel="alternate" href="/atom.xml" title="洛神葵的博客" type="application/atom+xml">
+</head>
     
 
                 <body>
-                    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
+                    <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
@@ -694,7 +693,7 @@
                                 
                                     <div class="info-break-policy">
                                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                                            230
+                                            228
                                     </div>
                                     
 
@@ -721,38 +720,16 @@
 
                         <div class="card-content article-card-content">
                             <div id="articleContent">
-                                <p>​    最近在学习python，分享一些自己写的小功能</p>
-<h2 id="1-遍历文件夹下文件"><a href="#1-遍历文件夹下文件" class="headerlink" title="1.遍历文件夹下文件"></a>1.遍历文件夹下文件</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> os
+                                <p>​	最近在学习python，分享一些自己写的小功能</p>
+<h2 id="1-遍历文件夹下文件"><a href="#1-遍历文件夹下文件" class="headerlink" title="1.遍历文件夹下文件"></a>1.遍历文件夹下文件</h2><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">path = <span class="string">r'E:\files\files'</span></span><br><span class="line"><span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> os.walk(path):</span><br><span class="line">    <span class="comment"># root 表示当前正在访问的文件夹路径</span></span><br><span class="line">    <span class="comment"># dirs 表示该文件夹下的子目录名list</span></span><br><span class="line">    <span class="comment"># files 表示该文件夹下的文件list</span></span><br><span class="line">    </span><br><span class="line"><span class="comment"># 遍历文件</span></span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> files:</span><br><span class="line">    <span class="built_in">print</span>(os.path.join(root, f).replace(path, <span class="string">''</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 遍历所有的文件夹</span></span><br><span class="line"><span class="keyword">for</span> d <span class="keyword">in</span> dirs:</span><br><span class="line">    <span class="built_in">print</span>(os.path.join(root, d).replace(path, <span class="string">''</span>))`</span><br></pre></td></tr></tbody></table></figure>
 
-path <span class="token operator">=</span> r<span class="token string">'E:\files\files'</span>
-<span class="token keyword">for</span> root<span class="token punctuation">,</span> dirs<span class="token punctuation">,</span> files <span class="token keyword">in</span> os<span class="token punctuation">.</span>walk<span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token comment" spellcheck="true"># root 表示当前正在访问的文件夹路径</span>
-    <span class="token comment" spellcheck="true"># dirs 表示该文件夹下的子目录名list</span>
-    <span class="token comment" spellcheck="true"># files 表示该文件夹下的文件list</span>
-    
-<span class="token comment" spellcheck="true"># 遍历文件</span>
-<span class="token keyword">for</span> f <span class="token keyword">in</span> files<span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>root<span class="token punctuation">,</span> f<span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span>path<span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-<span class="token comment" spellcheck="true"># 遍历所有的文件夹</span>
-<span class="token keyword">for</span> d <span class="token keyword">in</span> dirs<span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>root<span class="token punctuation">,</span> d<span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span>path<span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">)</span>`
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>注：</p>
 <ul>
 <li>如果replace的old_string改为root,则不会出现父级路径；</li>
 </ul>
-<h2 id="2-查找文件夹下文件中的内容"><a href="#2-查找文件夹下文件中的内容" class="headerlink" title="2.查找文件夹下文件中的内容"></a>2.查找文件夹下文件中的内容</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> os
-<span class="token comment" spellcheck="true"># 遍历所有帆软报表，找出包含union的文件</span>
-path <span class="token operator">=</span> r<span class="token string">'D:\softwares\FineReport_10.0\webapps\webroot\WEB-INF\reportlets'</span>
-findstring <span class="token operator">=</span> <span class="token string">'union'</span>
-<span class="token keyword">for</span> root<span class="token punctuation">,</span> dirs<span class="token punctuation">,</span> files <span class="token keyword">in</span> os<span class="token punctuation">.</span>walk<span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> name <span class="token keyword">in</span> files<span class="token punctuation">:</span>
-        <span class="token keyword">if</span> name<span class="token punctuation">.</span>endswith<span class="token punctuation">(</span><span class="token string">'.cpt'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            filepath <span class="token operator">=</span> open<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>root<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">'r'</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
-            <span class="token keyword">if</span> findstring  <span class="token keyword">in</span> filepath<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-                <span class="token keyword">print</span><span class="token punctuation">(</span>filepath<span class="token punctuation">.</span>name<span class="token punctuation">.</span>replace<span class="token punctuation">(</span>path<span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-查找文件夹下文件中的内容"><a href="#2-查找文件夹下文件中的内容" class="headerlink" title="2.查找文件夹下文件中的内容"></a>2.查找文件夹下文件中的内容</h2><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="comment"># 遍历所有帆软报表，找出包含union的文件</span></span><br><span class="line">path = <span class="string">r'D:\softwares\FineReport_10.0\webapps\webroot\WEB-INF\reportlets'</span></span><br><span class="line">findstring = <span class="string">'union'</span></span><br><span class="line"><span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> os.walk(path):</span><br><span class="line">    <span class="keyword">for</span> name <span class="keyword">in</span> files:</span><br><span class="line">        <span class="keyword">if</span> name.endswith(<span class="string">'.cpt'</span>):</span><br><span class="line">            filepath = <span class="built_in">open</span>(os.path.join(root, name),<span class="string">'r'</span>,encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">            <span class="keyword">if</span> findstring  <span class="keyword">in</span> filepath.read():</span><br><span class="line">                <span class="built_in">print</span>(filepath.name.replace(path,<span class="string">''</span>))</span><br></pre></td></tr></tbody></table></figure>
+
 <p>注：</p>
 <ul>
 <li>文件最好打开的时候就指定格式</li>
@@ -1343,7 +1320,7 @@ findstring <span class="token operator">=</span> <span class="token string">'uni
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">35.6k</span>&nbsp;字
+                class="white-color">36.6k</span>&nbsp;字
             
             
             
@@ -1648,6 +1625,20 @@ $(function () {
                                                                                                                             type="module"></script>
                                                                                                                         
 
+                
+                
+                <script src="https://unpkg.com/live2d-widget@3.1.4/lib/L2Dwidget.min.js"></script>
+                <script id="live2d-config" type="application/json">{"model":{"jsonPath":"https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}}</script>
+                <script>
+                    window.addEventListener('load', function () {
+                        if (!window.L2Dwidget) return;
+                        var configEl = document.getElementById('live2d-config');
+                        if (!configEl) return;
+                        L2Dwidget.init(JSON.parse(configEl.textContent));
+                    });
+                </script>
+                
+
                 <!-- 注册 Service Worker（首开预缓存核心静态资源） -->
                 <script>
                     if ('serviceWorker' in navigator) {
@@ -1672,6 +1663,6 @@ $(function () {
                 preloadRatio: 3,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body>
 
 </html>
